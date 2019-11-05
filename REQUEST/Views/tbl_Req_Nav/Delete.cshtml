@@ -1,0 +1,216 @@
+﻿@model REQUEST.Models.tbl_Req_Nav
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>tbl_Req_Nav</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.USER_NO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER_NO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Allow_STATUS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Allow_STATUS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SECTION_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SECTION_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NAV_Detail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NAV_Detail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NAV_DOC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NAV_DOC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NAV_APPROVER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NAV_APPROVER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date_APPROVER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date_APPROVER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.APPROVER_Owner_System)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.APPROVER_Owner_System)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.APPROVER_Owner_System_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.APPROVER_Owner_System_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Req_OPEN_BY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Req_OPEN_BY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Req_OPEN_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Req_OPEN_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Req_ASSIGN_TO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Req_ASSIGN_TO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Req_ASSIGN_TO_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Req_ASSIGN_TO_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Req_CLOSE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Req_CLOSE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Req_CLOSE_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Req_CLOSE_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.REQ_STATUS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.REQ_STATUS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Req_BILL_NO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Req_BILL_NO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Req_BILL_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Req_BILL_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Req_COST)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Req_COST)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER_CREATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER_CREATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER_UPDATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER_UPDATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UPDATE_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UPDATE_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CREATE_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CREATE_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Req_SUBMIT_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Req_SUBMIT_DATE)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

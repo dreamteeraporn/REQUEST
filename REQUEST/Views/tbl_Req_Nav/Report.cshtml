@@ -1,0 +1,148 @@
+﻿@model IEnumerable<REQUEST.Models.View_Req_NAV_Trace>
+
+@{
+    Layout = null;
+}
+
+<h2 align="lg">แบบฟอร์มการขอและเเก้ไขสิทธิในระบบ NAV</h2>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<table class="table table-bordered table-hover text-nowrap fixed">
+   
+    <tr bgcolor="ffd800">
+
+        <th>เลขเอกสาร</th>
+        <th>วันที่แจ้ง</th>
+        <th>รหัสพนักงาน</th>
+        <th>ชื่อ-สกุล</th>
+        <th>ตำแหน่ง</th>
+        <th>ฝ่าย</th>
+
+        <th>สิทธิการใช้งาน</th>
+        <th>สถานะสิทธิ</th>
+        <th>เลือกฝ่าย/ส่วน</th>
+        <th>รายละเอียดและสิ่งที่ต้องการ</th>
+        <th>เอกสารแนบ(ถ้ามี)</th>
+
+
+        <th>ชื่อผู้อนุมัติ</th>
+        <th>วันที่อนุมัติ</th>
+
+        <th>ผู้เปิดงาน</th>
+        <th>ชื่อผู้เปิดงาน</th>
+        <th>วันเปิดงาน</th>
+
+        <th>ผู้ดำเนินงาน</th>
+        <th>ชื่อผู้ดำเนินงาน</th>
+        <th>วันดำเนินงาน</th>
+
+        <th>ผู้ปิดงาน</th>
+        <th>ชื่อผู้ปิดงาน</th>
+        <th>วันปิดงาน</th>
+
+
+    </tr>
+    
+
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        <center>@Html.DisplayFor(modelItem => item.Req_NAV_CODE)</center>
+</td>
+    <td>
+        <center>@Html.DisplayFor(modelItem => item.DATE_NAV)</center>
+</td>
+    <td>
+        <center> @Html.DisplayFor(modelItem => item.USER_NO)</center>
+</td>
+
+    <td>
+        <center>  @Html.DisplayFor(modelItem => item.USER_NAME)</center>
+</td>
+
+
+    <td>
+        <center> @Html.DisplayFor(modelItem => item.PROSITION)</center>
+</td>
+
+    <td>
+        <center>@Html.DisplayFor(modelItem => item.DEPARTMENT)</center>
+</td>
+
+
+    <td>
+        <center>  @Html.DisplayFor(modelItem => item.Allow_DESCRIPTION)</center>
+</td>
+    <td>
+        <center> @Html.DisplayFor(modelItem => item.STA_DESCRIPTION)</center>
+</td>
+
+    <td>
+        <center>  @Html.DisplayFor(modelItem => item.SECTION_DESC)</center>
+</td>
+
+    <td>
+        <center>@Html.DisplayFor(modelItem => item.NAV_Detail)</center>
+</td>
+
+    <td>
+        <center> @Html.DisplayFor(modelItem => item.NAV_DOC)</center>
+</td>
+
+
+    <td>
+        <center>  @Html.DisplayFor(modelItem => item.NAME_APPROVER)</center>
+</td>
+
+    <td>
+        <center> @Html.DisplayFor(modelItem => item.Date_APPROVER)</center>
+</td>
+
+    <td>
+        <center>@Html.DisplayFor(modelItem => item.Req_OPEN_BY)</center>
+</td>
+
+    <td>
+        <center> @Html.DisplayFor(modelItem => item.NAME_OPEN)</center>
+</td>
+
+    <td>
+        <center>@Html.DisplayFor(modelItem => item.Req_OPEN_DATE)</center>
+</td>
+
+    <td>
+        <center> @Html.DisplayFor(modelItem => item.Req_ASSIGN_TO)</center>
+</td>
+
+    <td>
+        <center> @Html.DisplayFor(modelItem => item.NAME_ASSIGN)</center>
+</td>
+
+    <td>
+        <center> @Html.DisplayFor(modelItem => item.Req_ASSIGN_TO_DATE)</center>
+</td>
+
+
+    <td>
+        <center> @Html.DisplayFor(modelItem => item.Req_CLOSE)</center>
+</td>
+    <td>
+        <center>@Html.DisplayFor(modelItem => item.NAME_CLOSE)</center>
+</td>
+
+
+    <td>
+        <center>@Html.DisplayFor(modelItem => item.Req_CLOSE_DATE)</center>
+</td>
+
+
+</tr>
+
+    }
+
+
+</table>
+

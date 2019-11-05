@@ -1,0 +1,152 @@
+﻿@model IEnumerable<REQUEST.Models.View_Req_Navi_HR_Trace>
+
+@{
+    ViewBag.Title = "Trace";
+}
+
+<center>
+    <h2>ติดตามการขอรหัสและเปลี่ยนแปลงสิทธิใช้ระบบ Navision HR & Payroll</h2>
+
+</center>
+<div class="float-right pull-left col-md-4">
+    <form class=" navbar-from pull-left" role="search">
+        <div class="input-group pull-left">
+            @Html.TextBox("Search", null, new { @class = "form-control", @placeholder = "Search..." })
+            <div class=" input-group-btn">
+                <button class=" btn btn-default pull-left" type="submit"><i class=" glyphicon glyphicon-search"></i></button>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="col-md-3 col-sm-4">
+
+    @Html.ActionLink(" Report ", "Report", "tbl_Req_Navi_HR", new { @class = "btn-warning btn-lg fa fa-file-o" })
+
+</div>
+<table class="table table-bordered table-hover text-nowrap fixed">
+    <thead class="headTable" style="background-color: #82CAFA">
+        <tr>
+
+            <th>เลขเอกสาร</th>
+            <th>รหัสพนักงาน</th>
+            <th>ชื่อ-สกุล</th>
+            <th>ตำแหน่ง</th>
+            <th>ฝ่าย</th>
+            <th>เบอร์</th>
+            <th>สิทธิการเข้าถึง</th>
+            <th>สถานะของงาน</th>
+            <th>User Log In Name</th>
+            <th>วัตถุประสงค์ในการใช้ระบบ</th>
+            <th>วันที่แจ้ง</th>
+            <th>รหัสพนักงานผู้แจ้ง</th>
+            <th>ชื่อผู้แจ้ง</th>
+
+            <th>ชื่อผู้อนุมัติ</th>
+            <th>วันที่อนุมัติ</th>
+
+            <th>วันเปิดงาน</th>
+            <th>ผู้เปิดงาน</th>
+            <th>ชื่อผู้เปิดงาน</th>
+
+            <th>วันดำเนินงาน</th>
+            <th>ผู้ดำเนินงาน</th>
+            <th>ชื่อผู้ดำเนินงาน</th>
+
+            <th>วันปิดงาน</th>
+            <th>ผู้ปิดงาน</th>
+            <th>ชื่อผู้ปิดงาน</th>
+
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        <a href="@Url.Action("Details_Trace", "tbl_Req_Navi_HR", new { id = item.Req_Navi_HR_CODE })" style="color:#0000EE;"> @Html.DisplayFor(modelItem => item.Req_Navi_HR_CODE)</a>
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.USER_NO)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.USER_NAME)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.PROSITION)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DEPARTMENT)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.USER_EXTENSION)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Allow_DESCRIPTION)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.STA_DESCRIPTION)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Navi_HR_User_Log_In)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Navi_HR_Detail)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Navi_HR_REQUESTER_DATE)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Navi_HR_REQUESTER)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NAME_REQUESTER)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.NAME_APPROVER)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.Navi_HR_APPROVER_DATE)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.Req_OPEN_DATE)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Req_OPEN_BY)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NAME_OPEN)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Req_ASSIGN_TO_DATE)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Req_ASSIGN_TO)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NAME_ASSIGN)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.Req_CLOSE_DATE)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Req_CLOSE)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NAME_CLOSE)
+    </td>
+
+    <td>
+        @Html.ActionLink(" Print", "PrintPartialViewToPdf", null, new { id = item.Req_Navi_HR_CODE  }, new { target = "_blank", @class = "btn btn-success glyphicon glyphicon-print" })
+
+    </td>
+
+</tr>
+    }
+
+</table>

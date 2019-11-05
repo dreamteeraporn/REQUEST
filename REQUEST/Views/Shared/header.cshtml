@@ -1,0 +1,48 @@
+﻿
+<header class="main-header">
+
+    <a href="@Url.Action("Index", "Home")" class="logo">
+
+        <img class="logo-lg" src="~/Content/dist/img/pan.jpg" width="60px;" />
+        <span class="logo-mini"><b>IT</b></span>
+
+    </a>
+
+    <nav class="navbar navbar-static-top" role="navigation">
+        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+            <span class="sr-only">Toggle navigation</span>
+        </a>
+        <div class="navbar-custom-menu">
+
+            <span class="navbar-text">
+                @if (Session["USER_NO"] != null)
+                {
+                    <span style="color:white">
+                        @Session["USER_NAME"].ToString() |
+                        <a style="position:relative; color:white" href="@Url.Action("Login", "Home", null)">Logout</a>
+                    </span>
+                }
+            </span>
+
+
+        </div>
+    </nav>
+
+</header>
+<style>
+    a.my-class {
+        color: #333333
+    }
+
+        a.my-class:active {
+            color: #666666
+        }
+
+        a.my-class:link {
+            color: #999999
+        }
+
+        a.my-class:visited {
+            color: #CCCCCC
+        }
+</style>

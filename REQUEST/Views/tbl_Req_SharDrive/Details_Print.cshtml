@@ -1,0 +1,217 @@
+﻿@model REQUEST.Models.View_Req_SD_Trace
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="~/Content/Style.css" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=Sarabun&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <p style="text-align:right">Printed: @DateTime.Now.ToShortDateString()</p>
+    <div class="row bg-faded">
+        <div class="col-4 mx-auto text-center">
+            <img src="~/Content/dist/img/Logo.png" width="100px" height="100px"> <!-- center this image within the column -->
+        </div>
+    </div>
+
+    <center>
+        <h3>แบบฟอร์มการขอและยกเลิกสิทธิรหัสผู้ใช้ เพื่อการเข้าสู่ Share Drive</h3>
+    </center>
+
+    <br>
+    <div class="col-lg-10">
+        <b>    เลขเอกสาร  </b>&nbsp; &nbsp; &nbsp; &nbsp;
+        @Html.DisplayFor(model => model.Req_SD_CODE)
+    </div>
+
+    <div class="col-md-4">
+        <b>    สิทธิการใช้งาน  </b>&nbsp; &nbsp; &nbsp; &nbsp;
+
+
+        @Html.DisplayFor(model => model.Allow_DESCRIPTION)&nbsp; &nbsp; &nbsp; &nbsp;
+        <br>
+        <b>    รหัสพนักงาน   </b>&nbsp; &nbsp; &nbsp; &nbsp;
+        <td>
+            @Html.DisplayFor(model => model.USER_NO)&nbsp; &nbsp; &nbsp; &nbsp;
+        </td>
+
+
+
+        <b>     ชื่อ-สกุล(ไทย)   </b>&nbsp; &nbsp; &nbsp; &nbsp;
+        <td>
+            @Html.DisplayFor(model => model.USER_NAME)&nbsp; &nbsp;&nbsp;
+        </td>
+
+    </div>
+    <div class="col-md-4">
+        <b>     ชื่อ-สกุล(อังกฤษ)  </b>&nbsp; &nbsp;
+        <td>
+            @Html.DisplayFor(model => model.NAME_ENG) &nbsp; &nbsp; &nbsp; &nbsp;
+        </td>
+
+
+
+        <b>    ตำแหน่ง  </b>&nbsp; &nbsp;
+        <td>
+            @Html.DisplayFor(model => model.PROSITION)&nbsp; &nbsp; &nbsp; &nbsp;
+        </td>
+
+        <b>      ฝ่าย </b>&nbsp; &nbsp; &nbsp; &nbsp;
+        <td>
+            @Html.DisplayFor(model => model.DEPARTMENT)&nbsp; &nbsp; &nbsp; &nbsp;
+        </td>
+
+        <br>
+
+        <b>      เบอร์ติดต่อ  </b>&nbsp; &nbsp; &nbsp; &nbsp;
+        <td>
+            @Html.DisplayFor(model => model.USER_EXTENSION)
+
+        </td>
+
+    </div>
+
+    <br >
+    <table class="table table-bordered">
+
+        <thead class="headTable" style="background-color: gray">
+
+            <tr>
+
+                <th>Drive</th>
+                <th>Folder</th>
+                <th> สิทธิการเข้าถึง</th>
+                <th>หมายเหตุ</th>
+            </tr>
+        </thead>
+
+        <tr>
+
+
+            <td>
+                @Html.DisplayFor(model => model.SD_Drive)
+            </td>
+            <td>
+
+                @Html.DisplayFor(model => model.SD_Folder)
+
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Authen_DESCRIPTION)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.SD_Note)
+            </td>
+
+        </tr>
+
+    </table>
+    <br>
+    <div class="col-md-4">
+        <b>   ชื่อผู้แจ้ง </b>&nbsp; &nbsp; &nbsp; &nbsp;
+        <td>
+            @Html.DisplayFor(model => model.NAME_REQUESTER)
+        </td>
+    </div>
+
+    <div class="col-md-3">
+        <b>  วันที่แจ้ง </b>&nbsp; &nbsp; &nbsp; &nbsp;
+
+        <td>
+            @Html.DisplayFor(model => model.SD_DATE)
+        </td>
+    </div>
+    <div class="col-md-4">
+        <b>   เบอร์ติดต่อ </b>&nbsp; &nbsp; &nbsp; &nbsp;
+        <td>
+            @Html.DisplayFor(model => model.EXTENSION_REQUESTER)
+        </td>
+
+
+
+    </div>
+    <div class="col-md-4">
+        <b>   ชื่ออนุมัติ(หัวหน้า) </b>&nbsp; &nbsp; &nbsp; &nbsp;
+        <td>
+            @Html.DisplayFor(model => model.NAME_APPROVER)
+        </td>
+    </div>
+
+    <div class="col-md-4">
+        <b>   วันที่อนุมัติ </b>&nbsp; &nbsp; &nbsp; &nbsp;
+
+        <td>
+            @Html.DisplayFor(model => model.Date_APPROVER)
+
+        </td>
+    </div>
+
+    <div>
+        <br>
+        <hr color="black" align="center" width="100%">
+
+    </div>
+    <h3>ฝ่ายเทคโนโลยี</h3>
+    <br>
+    <div class="col-md-4">
+        <b>    ชื่อผู้ดำเนินงาน  </b> &nbsp; &nbsp; &nbsp; &nbsp;
+
+
+        @Html.DisplayFor(model => model.NAME_ASSIGN)&nbsp; &nbsp;
+        @Html.DisplayFor(model => model.SURNAME_ASSIGN)&nbsp; &nbsp; &nbsp; &nbsp;
+    </div>
+
+    <div class="col-md-4">
+        <b>    วันที่ดำเนินงาน   </b>&nbsp; &nbsp; &nbsp; &nbsp;
+        <td>
+            @Html.DisplayFor(model => model.Req_ASSIGN_TO_DATE)
+        </td>
+        <br>
+    </div>
+
+    <div class="col-md-4">
+        <b>    ชื่อผู้ปิดงาน</b> &nbsp; &nbsp; &nbsp; &nbsp;
+        <td>
+
+            @Html.DisplayFor(model => model.NAME_CLOSE)
+            @Html.DisplayFor(model => model.SURNAME_CLOSE)&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+        </td>
+    </div>
+    <div class="col-md-4">
+        <b>    วันปิดงาน  </b>&nbsp; &nbsp; &nbsp; &nbsp;
+        <td>
+            @Html.DisplayFor(model => model.Req_CLOSE_DATE)
+        </td>
+
+
+    </div>
+    <br>
+    <div class="footer">
+
+        <img src="~/Content/dist/img/Tagline.png" width="100%" />
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+</body>
+
+
+</html>

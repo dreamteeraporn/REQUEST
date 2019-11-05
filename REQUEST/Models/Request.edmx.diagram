@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8b33e60cccd145f5974ced8b85a9d885" Name="Diagram1">
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_assesories" Width="1.5" PointX="2.5" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_buy_reason" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_categories" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_cost_section" Width="1.5" PointX="4.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_costcenter" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_device_types" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_doc_group" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_doc_type" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_document" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_hw_assets" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_hw_log_case" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_hw_options_addon" Width="1.5" PointX="2.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_hw_sw_standard" Width="1.5" PointX="8.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_hw_terminate" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_incident_case" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_incident_part" Width="1.5" PointX="4.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_Incident_status" Width="1.5" PointX="13.625" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_it_staff" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_pc_standards" Width="1.5" PointX="12.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_pc_sw_standard" Width="1.5" PointX="12.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_req_allow_status" Width="1.5" PointX="12.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_req_types" Width="1.5" PointX="16.625" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_request_status" Width="1.5" PointX="10" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_staff_member" Width="1.5" PointX="8.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_status_hw" Width="1.5" PointX="10.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_supplier" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_sw_assets" Width="1.5" PointX="16.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_sw_type" Width="1.5" PointX="13" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_user" Width="1.5" PointX="14.625" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_year_document_number" Width="1.5" PointX="2.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.TblLocalTable" Width="1.5" PointX="4.625" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_configure" Width="1.5" PointX="14.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.View_costcenter" Width="1.5" PointX="16.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.View_device_type" Width="1.5" PointX="18.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.View_document" Width="1.5" PointX="18.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.View_hw_assets" Width="1.5" PointX="18.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.View_hw_options_addon" Width="1.5" PointX="6.875" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.View_hw_sw_standard" Width="1.5" PointX="8.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.View_inc_status" Width="1.5" PointX="10.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.View_incident_all" Width="1.5" PointX="20.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.View_incident_case" Width="1.5" PointX="20.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.View_it_open_by" Width="1.5" PointX="16.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.View_pc_standards" Width="1.5" PointX="20.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.View_pc_sw_standard" Width="1.5" PointX="0.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.View_staff_member" Width="1.5" PointX="2.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.View_sw_assets" Width="1.5" PointX="18.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_Req_Applicant" Width="1.5" PointX="23.375" PointY="5.75" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_Req_Authen" Width="1.5" PointX="23.375" PointY="13.75" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_Req_AF" Width="1.875" PointX="13.375" PointY="22.75" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_AF_STATUS" Width="1.5" PointX="15.125" PointY="21.5" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_Req_Navi_HR" Width="2.5" PointX="23" PointY="21.75" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_Req_Program" Width="2.5" PointX="27.25" PointY="16.625" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_Req_SharDrive" Width="2.5" PointX="7" PointY="24.75" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.View_Req_AF" Width="1.5" PointX="10.75" PointY="23.75" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.View_Req_Navi_HR_Trace" Width="1.5" PointX="0.75" PointY="25.75" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.View_Req_PG" Width="1.5" PointX="23.75" PointY="8.75" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.View_Req_PG_Trace" Width="1.5" PointX="2.75" PointY="25.75" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.View_Req_SD" Width="1.5" PointX="25.75" PointY="6.75" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.View_Req_AF_Trace" Width="2.125" PointX="27.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.View_Req_SD_Trace" Width="2.75" PointX="26.375" PointY="23.75" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_Req_Nav" Width="1.5" PointX="21.75" PointY="28.75" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_section" Width="1.5" PointX="0.75" PointY="13.75" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.View_Req_NAV" Width="1.5" PointX="23.75" PointY="16.75" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.View_Req_NAV_Trace" Width="1.5" PointX="23.75" PointY="28.75" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.View_Req_Navi_HR" Width="1.5" PointX="25.375" PointY="0.75" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.View_Req_PDJCOST01_Trace" Width="2" PointX="16.375" PointY="29.75" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_Req_PDJCOST01" Width="1.5" PointX="10.375" PointY="29.75" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.View_Req_PDJCOST01" Width="1.5" PointX="30.375" PointY="0.75" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.tbl_Req_PDJMINI02" Width="1.5" PointX="30.375" PointY="6.75" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.View_Req_PDJMINI02" Width="1.5" PointX="12.375" PointY="30.75" />
+        <EntityTypeShape EntityType="IT_ASSET_MANAGEMENTModel.View_Req_PDJMINI02_Trace" Width="1.5" PointX="30.375" PointY="14.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

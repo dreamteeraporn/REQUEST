@@ -1,0 +1,115 @@
+﻿@model REQUEST.Models.AF
+
+@{
+    ViewBag.Title = "Create";
+}
+    <center>
+        <h2>กรอกข้อมูลการขอสิทธิ ALFRESCO</h2>
+    </center>
+    <input type="button" class="btn btn-info" value="กลับไปหน้ารายการ" onclick="location.href='@Url.Action("Index", "tbl_Req_AF")'" />
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.REQ_STATUS, "สถานะของงาน", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.EditorFor(model => model.REQ_STATUS, new { htmlAttributes = new { @class = "form-control", @Value = "01", @readonly = "true" } })
+            @Html.ValidationMessageFor(model => model.REQ_STATUS, "หมายเหตุ 01  ลงทะเบียน ", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Allow_STATUS, "สิทธิการใช้งาน", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+
+            @Html.DropDownListFor(model => model.Allow_STATUS, new List<SelectListItem>
+    {
+
+    new SelectListItem{ Text="ขอสิทธิ", Value="01"},
+    new SelectListItem { Text="แก้ไขและเพิ่มเติมสิทธิ", Value="02" },
+    new SelectListItem { Text="ยกเลิกสิทธิ", Value="03" },
+   }, "กรุณาเลือก", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Allow_STATUS, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.USER_NO, "รหัสพนักงาน", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.EditorFor(model => model.USER_NO, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.USER_NO, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.AF_Site, "Site", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-8">
+            @Html.EditorFor(model => model.AF_Site, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.AF_Site, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.AF_Folder, "Floder", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-8">
+            @Html.EditorFor(model => model.AF_Folder, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.AF_Folder, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+   
+    <div class="form-group">
+        @Html.LabelFor(model => model.AF_STATUS_ID, "สถานะของสิทธิ", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-8">
+
+            @Html.DropDownListFor(model => model.AF_STATUS_ID, new List<SelectListItem>
+    {
+
+    new SelectListItem{ Text="Manager", Value="01"},
+    new SelectListItem { Text="Collaborator", Value="02" },
+    new SelectListItem { Text="Contributor", Value="03" },
+     new SelectListItem { Text="Consumer", Value="04" },
+     new SelectListItem { Text="Read Only", Value="05" },
+   }, "กรุณาเลือก", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.AF_STATUS_ID, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.AF_Note, "หมายเหตุ", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-8">
+            @Html.TextAreaFor(model => model.AF_Note, htmlAttributes: new { @class = "form-control", @rows = 5, @cols = 30 })
+            @Html.ValidationMessageFor(model => model.AF_Note, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.AF_REQUESTER, "รหัสพนักงานผู้แจ้ง", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-8">
+            @Html.EditorFor(model => model.AF_REQUESTER, new { htmlAttributes = new { @class = "form-control", @Value = Session["USER_NO"].ToString(), @readonly = "true" } })
+            @Html.ValidationMessageFor(model => model.AF_REQUESTER, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.AF_DATE, "วันที่แจ้ง", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-8">
+            @Html.EditorFor(model => model.AF_DATE, new { htmlAttributes = new { @class = "form-control", @Value = DateTime.Now.ToShortDateString(), @readonly = "true" } })
+            @Html.ValidationMessageFor(model => model.AF_DATE, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="ยืนยัน" class="btn btn-default" style="background-color:#8cb9e5" />
+        </div>
+    </div>
+</div>
+}

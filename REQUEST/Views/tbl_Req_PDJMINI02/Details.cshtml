@@ -1,0 +1,182 @@
+﻿@model REQUEST.Models.View_Req_PDJMINI02
+
+@{
+    ViewBag.Title = "Details";
+}
+    <center>
+        <h2>รายละเอียดข้อมูลการขอสิทธิการใช้เครื่อง PDJMINI 02</h2>
+    </center>
+    <div>
+
+        <div>
+            <input type="button" class="btn btn-info" value="กลับไปหน้ารายการ" onclick="location.href='@Url.Action("Index", "tbl_Req_PDJMINI02")'" />
+
+        </div>
+        <div class="container">
+
+            <table class="table table-bordered table-striped">
+
+                <tbody style="font-size:16px;">
+
+                    <tr>
+
+                        <td>
+
+                            <b>   รหัสพนักงาน </b>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.USER_NO)
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <b>  ชื่อ-สกุล(ไทย) </b>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.USER_NAME)
+                        </td>
+
+                    <tr>
+                        <td>
+                            <b>  ชื่อ-สกุล(อังกฤษ) </b>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.NAME_ENG)
+                        </td>
+                    <tr>
+                        <td>
+                            <b>  ตำแหน่ง </b>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.PROSITION)
+                        </td>
+
+                    <tr>
+                        <td>
+                            <b>   ฝ่าย </b>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.DEPARTMENT)
+                        </td>
+
+                    <tr>
+                        <td>
+                            <b>  เบอร์ติดต่อ </b>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.USER_EXTENSION)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>  สิทธิการใช้งาน </b>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Allow_DESCRIPTION)
+                        </td>
+
+                    <tr>
+                        <td>
+                            <b>  สถานะของงาน </b>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.STA_DESCRIPTION)
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <b>  Sample$ on 'Pdjmini02' (S:)  </b>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Sample_Pdj02)
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            <b>  Proto$ on 'Pdjmini02' (T:)  </b>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Proto_Pdj02)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <b>  PrototypeInfrom$ on 'Pdjmini02 </b>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.PrototypeInfrom)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <b>  CHM$ on 'Pdjmini02  </b>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.CHM_Pdj02)
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            <b> วันที่แจ้ง  </b>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.PDJ02_REQUESTER_DATE)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <b> รหัสพนักงานผู้แจ้ง  </b>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.PDJ02_REQUESTER)
+                        </td>
+                    </tr>
+
+
+
+                    <tr>
+                        <td>
+                            <b>  ชื่อผู้แจ้ง </b>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.NAME_REQUESTER)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>  ตำแหน่งผู้แจ้ง </b>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.PROSITION_REQUESTER)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>  ฝ่ายผู้แจ้ง </b>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.DEPARTMENT_REQUESTER)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>  เบอร์ผู้แจ้ง </b>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.EXTENSION_REQUESTER)
+                        </td>
+                    </tr>
+
+</table>
+        </div>

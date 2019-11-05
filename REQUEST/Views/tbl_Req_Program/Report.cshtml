@@ -1,0 +1,115 @@
+﻿@model IEnumerable<REQUEST.Models.View_Req_PG_Trace>
+
+@{
+    Layout = null;
+}
+
+<h2 align="middle">ใบขอรับบริการทางด้านโปรแกรมคอมพิวเตอร์</h2>
+
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<table class="table table-bordered table-hover text-nowrap fixed">
+
+    <tr bgcolor="ffd800">
+        <th>เลขเอกสาร</th>
+        <th>รหัสพนักงาน</th>
+        <th>สถานะงาน</th>
+
+        <th>วันที่แจ้ง</th>
+        <th>งาน</th>
+        <th>ปัญหา</th>
+        <th>ความต้องการ</th>
+        <th>ความถี่ในการใช้งาน</th>
+        <th>ต้องการใช้วันที่</th>
+
+        <th>ผู้เปิดงาน</th>
+        <th>ชื่อผู้เปิดงาน</th>
+        <th>วันเปิดงาน</th>
+
+        <th>ผู้ดำเนินงาน</th>
+        <th>ชื่อดำเนินงาน</th>
+        <th>วันดำเนินงาน</th>
+
+        <th>วันปิดงาน</th>
+        <th>ผู้ปิดงาน</th>
+        <th>ชื่อปิดงาน</th>
+    </tr>
+    
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+
+               @Html.DisplayFor(modelItem => item.Req_PG_CODE)
+            </td>
+
+            <td>
+
+                @Html.DisplayFor(modelItem => item.PG_DATE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.USER_NO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.STA_DESCRIPTION)
+            </td>
+
+
+            <td>
+                @Html.DisplayFor(modelItem => item.PG_Work)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PG_Problem)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.PG_Requirement)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PG_Frequency)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PG_Date_start)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Req_OPEN_BY)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NAME_OPEN)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Req_OPEN_DATE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Req_ASSIGN_TO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NAME_ASSIGN)
+            </td>
+
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Req_ASSIGN_TO_DATE)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Req_CLOSE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NAME_CLOSE)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Req_CLOSE_DATE)
+            </td>
+
+           
+
+        </tr>
+    }
+
+</table>

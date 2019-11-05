@@ -1,0 +1,78 @@
+﻿@model REQUEST.Models.tbl_user
+
+@{
+    Layout = "~/Views/Shared/_Login.cshtml";
+}
+<div class="login-box">
+
+    <div class="login-box-body">
+
+        <div class="login-logo">
+            <img src="~/Content/dist/img/pan.jpg" />
+
+            <b>Request</b>
+        </div>
+        <h4>
+            <p class="login-box-msg">LOGIN </p>
+        </h4>
+        @using (Html.BeginForm("login", "Home", FormMethod.Post))
+        {
+            <fieldset>
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+                @if (@ViewBag.Message != null)
+                {
+                <div style="color: red">
+                    <h5>@ViewBag.Message </h5>
+                </div>
+                }
+                <form action="../../index2.html" method="post">
+                    <div class="form-group has-feedback">
+
+                        @Html.TextBoxFor(b => b.USER_NO, new { placeholder = "Username", @class = "form-control" })
+                        @Html.ValidationMessageFor(b => b.USER_NO)
+                        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                    </div>
+                    <div class="form-group has-feedback">
+                        @Html.PasswordFor(b => b.USER_PASSWORD, new { placeholder = "Password", @class = "form-control" })
+                        @Html.ValidationMessageFor(b => b.USER_PASSWORD)
+                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-8">
+                            <div class="checkbox icheck">
+                                <label>
+                                    <input type="checkbox"> Remember Me
+                                </label>
+                            </div>
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-xs-4">
+                            <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                            <input type="button" class="btn btn-primary btn-block btn-flat" value="Register" onclick="location.href='@Url.Action("Register", "Home")'" />
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                </form>
+
+
+
+            </fieldset>
+        }
+    </div>
+</div>
+<!-- /.login-box -->
+<!-- jQuery 3 -->
+<script src="~/Content/bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="~/Content/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- iCheck -->
+<script src="~/Content/plugins/iCheck/icheck.min.js"></script>
+<script>
+    $(function () {
+        $('input').iCheck({
+            checkboxClass: 'icheckbox_square-blue',
+            radioClass: 'iradio_square-blue',
+            increaseArea: '20%' /* optional */
+        });
+    });</script>

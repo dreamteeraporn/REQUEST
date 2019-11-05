@@ -1,0 +1,136 @@
+﻿@model IEnumerable<REQUEST.Models.View_Req_Navi_HR_Trace>
+
+@{
+   Layout = null;
+}
+
+<h2 align="middle">แบบฟอร์มการขอรหัสและเปลี่ยนแปลงสิทธิเพื่อใช้ระบบ Navision HR & Payroll</h2>
+
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+
+<table class="table table-bordered table-hover text-nowrap fixed">
+    
+        <tr bgcolor="ffd800">
+
+            <th>เลขเอกสาร</th>
+            <th>รหัสพนักงาน</th>
+            <th>ชื่อ-สกุล</th>
+            <th>ตำแหน่ง</th>
+            <th>ฝ่าย</th>
+            <th>เบอร์</th>
+            <th>สิทธิการเข้าถึง</th>
+            <th>สถานะของงาน</th>
+            <th>User Log In Name</th>
+            <th>วัตถุประสงค์ในการใช้ระบบ</th>
+            <th>วันที่แจ้ง</th>
+            <th>รหัสพนักงานผู้แจ้ง</th>
+            <th>ชื่อผู้แจ้ง</th>
+
+            <th>ชื่อผู้อนุมัติ</th>
+            <th>วันที่อนุมัติ</th>
+
+            <th>วันเปิดงาน</th>
+            <th>ผู้เปิดงาน</th>
+            <th>ชื่อผู้เปิดงาน</th>
+
+            <th>วันดำเนินงาน</th>
+            <th>ผู้ดำเนินงาน</th>
+            <th>ชื่อผู้ดำเนินงาน</th>
+
+            <th>วันปิดงาน</th>
+            <th>ผู้ปิดงาน</th>
+            <th>ชื่อผู้ปิดงาน</th>
+
+        </tr>
+   
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <center> @Html.DisplayFor(modelItem => item.Req_Navi_HR_CODE)</center>
+            </td>
+
+            <td>
+                <center>@Html.DisplayFor(modelItem => item.USER_NO)</center>
+            </td>
+            <td>
+                <center>@Html.DisplayFor(modelItem => item.USER_NAME)</center>
+            </td>
+
+            <td>
+                <center>@Html.DisplayFor(modelItem => item.PROSITION)</center>
+</td>
+            <td>
+                <center> @Html.DisplayFor(modelItem => item.DEPARTMENT)</center>
+</td>
+            <td>
+                <center>@Html.DisplayFor(modelItem => item.USER_EXTENSION)</center>
+</td>
+            <td>
+                <center> @Html.DisplayFor(modelItem => item.Allow_DESCRIPTION)</center>
+</td>
+            <td>
+                <center>@Html.DisplayFor(modelItem => item.STA_DESCRIPTION)</center>
+</td>
+            <td>
+                <center> @Html.DisplayFor(modelItem => item.Navi_HR_User_Log_In)</center>
+</td>
+            <td>
+                <center> @Html.DisplayFor(modelItem => item.Navi_HR_Detail)</center>
+</td>
+            <td>
+                <center>  @Html.DisplayFor(modelItem => item.Navi_HR_REQUESTER_DATE)</center>
+</td>
+            <td>
+                <center>  @Html.DisplayFor(modelItem => item.Navi_HR_REQUESTER)</center>
+</td>
+            <td>
+                <center> @Html.DisplayFor(modelItem => item.NAME_REQUESTER)</center>
+</td>
+
+            <td>
+                <center> @Html.DisplayFor(modelItem => item.NAME_APPROVER)</center>
+</td>
+
+            <td>
+                <center>  @Html.DisplayFor(modelItem => item.Navi_HR_APPROVER_DATE)</center>
+</td>
+
+            <td>
+                <center>  @Html.DisplayFor(modelItem => item.Req_OPEN_DATE)</center>
+</td>
+            <td>
+                <center>    @Html.DisplayFor(modelItem => item.Req_OPEN_BY)</center>
+</td>
+            <td>
+                <center>@Html.DisplayFor(modelItem => item.NAME_OPEN)</center>
+</td>
+            <td>
+                <center>@Html.DisplayFor(modelItem => item.Req_ASSIGN_TO_DATE)</center>
+</td>
+            <td>
+                <center> @Html.DisplayFor(modelItem => item.Req_ASSIGN_TO)</center>
+</td>
+            <td>
+                <center>  @Html.DisplayFor(modelItem => item.NAME_ASSIGN)</center>
+</td>
+
+            <td>
+                <center> @Html.DisplayFor(modelItem => item.Req_CLOSE_DATE)</center>
+</td>
+            <td>
+                <center>  @Html.DisplayFor(modelItem => item.Req_CLOSE)</center>
+</td>
+            <td>
+                <center>  @Html.DisplayFor(modelItem => item.NAME_CLOSE)</center>
+</td>
+
+
+
+        </tr>
+    }
+
+</table>

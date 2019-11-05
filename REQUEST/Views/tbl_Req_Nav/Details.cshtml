@@ -1,0 +1,114 @@
+﻿@model REQUEST.Models.View_Req_NAV
+
+@{
+    ViewBag.Title = "Details";
+}
+<center>
+    <h2>รายละเอียดการขอสิทธิและแก้ไขเพิ่มเติมการใช้ระบบ NAV</h2>
+</center>
+
+<div>
+
+    <input type="button" class="btn btn-info" value="กลับไปหน้ารายการ" onclick="location.href='@Url.Action("Index", "tbl_Req_Nav")'" />
+
+</div>
+<br>
+<div class="container">
+
+    <table class="table table-bordered table-striped">
+
+        <tbody style="font-size:16px;">
+
+            <tr>
+
+                <td>
+
+                    <b>   รหัสพนักงาน </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.USER_NO)
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>
+                    <b>  ชื่อ-สกุล(ไทย) </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.USER_NAME)
+                </td>
+
+            <tr>
+                <td>
+                    <b>  ชื่อ-สกุล(อังกฤษ) </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.NAME_ENG)
+                </td>
+            <tr>
+                <td>
+                    <b>  ตำแหน่ง </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.PROSITION)
+                </td>
+
+            <tr>
+                <td>
+                    <b>   ฝ่าย </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.DEPARTMENT)
+                </td>
+
+            <tr>
+                <td>
+                    <b>  เบอร์ติดต่อ </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.USER_EXTENSION)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>  สิทธิการใช้งาน </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Allow_DESCRIPTION)
+                </td>
+            <tr>
+                <td>
+                    <b>  สถานะของงาน </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.STA_DESCRIPTION)
+                </td>
+            <tr>
+                <td>
+                    <b>  ส่วน/ฝ่าย </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.SECTION_DESC)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b> รายละเอียดและสิ่งที่ต้องการ </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.NAV_Detail)
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <b> เอกสารแนบ(ถ้ามี) </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.NAV_DOC)
+                </td>
+            </tr>
+
+    </table>
+</div>

@@ -1,0 +1,174 @@
+﻿@model IEnumerable<REQUEST.Models.View_Req_PDJCOST01_Trace>
+
+@{
+    ViewBag.Title = "Trace";
+}
+
+<center>
+    <h2>ติดตามการขอและยกเลิกสิทธิการใช้เครื่อง PDJCOST01</h2>
+
+</center>
+<div class="float-right pull-left col-md-4">
+    <form class=" navbar-from pull-left" role="search">
+        <div class="input-group pull-left">
+            @Html.TextBox("Search", null, new { @class = "form-control", @placeholder = "Search..." })
+            <div class=" input-group-btn">
+                <button class=" btn btn-default pull-left" type="submit"><i class=" glyphicon glyphicon-search"></i></button>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="col-md-3 col-sm-4">
+
+    @Html.ActionLink(" Report ", "Report", "tbl_Req_PDJCOST01", new { @class = "btn-warning btn-lg fa fa-file-o" })
+
+</div>
+<table class="table table-bordered table-hover text-nowrap fixed">
+    <thead class="headTable" style="background-color: #82CAFA">
+        <tr>
+
+            <th>เลขเอกสาร</th>
+            <th>รหัสพนักงาน</th>
+            <th>ชื่อ-สกุล</th>
+            <th>ตำแหน่ง</th>
+            <th>ฝ่าย</th>
+            <th>เบอร์</th>
+            <th>สิทธิการใช้งาน</th>
+
+            <th>สถานะของงาน</th>
+            <th><center>Color Picture<br> (O:)</center> </th>
+            <th><center>Quotation<br>Quotation$(y)</center></th>
+            <th><center>Spec Sheet <br>SpSheet$(y)</center></th>
+            <th><center>แผนกจัดทำราคาสินค้า <br>Price$(w)</center></th>
+            <th><center>Product Analysis<br>(P:)</center></th>
+            <th><center>Line Drawing <br>(Q:)</center></th>
+
+            <th>วันที่แจ้ง</th>
+            <th>รหัสพนักงานผู้แจ้ง</th>
+            <th>ชื่อผู้แจ้ง</th>
+
+            <th>ชื่อผู้อนุมัติ</th>
+            <th>วันที่อนุมัติ</th>
+
+            <th>วันเปิดงาน</th>
+            <th>ผู้เปิดงาน</th>
+            <th>ชื่อผู้เปิดงาน</th>
+
+            <th>วันดำเนินงาน</th>
+            <th>ผู้ดำเนินงาน</th>
+            <th>ชื่อผู้ดำเนินงาน</th>
+
+            <th>วันปิดงาน</th>
+            <th>ผู้ปิดงาน</th>
+            <th>ชื่อผู้ปิดงาน</th>
+
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        <a href="@Url.Action("Details_Trace", "tbl_Req_PDJCOST01", new { id = item.Req_PDJ01_CODE})" style="color:#0000EE;"> @Html.DisplayFor(modelItem => item.Req_PDJ01_CODE)</a>
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.USER_NO)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.USER_NAME)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.PROSITION)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DEPARTMENT)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.USER_EXTENSION)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Allow_DESCRIPTION)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.STA_DESCRIPTION)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Color_Picture)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Quotation)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Spec_Sheet)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Produce_Prices)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Product_Analysis)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Line_Drawing)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PDJ01_REQUESTER_DATE)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NAME_REQUESTER)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PDJ01_REQUESTER)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.NAME_APPROVER)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.PDJ01_APPROVER_DATE)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.Req_OPEN_BY)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NAME_OPEN)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.Req_OPEN_DATE)
+    </td>
+
+
+    <td>
+        @Html.DisplayFor(modelItem => item.Req_ASSIGN_TO_DATE)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Req_ASSIGN_TO)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NAME_ASSIGN)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.Req_CLOSE_DATE)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Req_CLOSE)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NAME_CLOSE)
+    </td>
+
+
+
+    <td>
+        @Html.ActionLink(" Print", "PrintPartialViewToPdf", null, new { id = item.Req_PDJ01_CODE }, new { target = "_blank", @class = "btn btn-success glyphicon glyphicon-print" })
+
+    </td>
+
+</tr>
+    }
+
+</table>

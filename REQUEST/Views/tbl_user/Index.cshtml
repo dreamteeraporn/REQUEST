@@ -1,0 +1,63 @@
+﻿@model IEnumerable<REQUEST.Models.tbl_user>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_PASSWORD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_LOGIN_TIME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_LOGIN_FLAG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_STATUS)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_PASSWORD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_LOGIN_TIME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_LOGIN_FLAG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_STATUS)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.USER_NO }) |
+            @Html.ActionLink("Details", "Details", new { id=item.USER_NO }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.USER_NO })
+        </td>
+    </tr>
+}
+
+</table>

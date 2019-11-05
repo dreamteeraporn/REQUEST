@@ -1,0 +1,170 @@
+﻿@model REQUEST.Models.View_Req_Navi_HR
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<center>
+    <h2>รายละเอียดการขอรหัสและเปลี่ยนแปลงสิทธิใช้ระบบ Navision HR & Payroll</h2>
+</center>
+<div>
+    <input type="button" class="btn btn-info" value="กลับไปหน้ารายการ" onclick="location.href='@Url.Action("Index", "tbl_Req_Navi_HR")'" />
+
+
+</div>
+
+<br>
+<div class="container">
+
+    <table class="table table-bordered table-striped">
+
+        <tbody style="font-size:16px;">
+
+            <tr>
+
+                <td>
+
+                    <b>   รหัสพนักงาน </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.USER_NO)
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>
+                    <b>  ชื่อ-สกุล(ไทย) </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.USER_NAME)
+                </td>
+
+            <tr>
+                <td>
+                    <b>  ชื่อ-สกุล(อังกฤษ) </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.NAME_ENG)
+                </td>
+            <tr>
+                <td>
+                    <b>  ตำแหน่ง </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.PROSITION)
+                </td>
+
+            <tr>
+                <td>
+                    <b>   ฝ่าย </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.DEPARTMENT)
+                </td>
+
+            <tr>
+                <td>
+                    <b>  เบอร์ติดต่อ </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.USER_EXTENSION)
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <b> สิทธิการใช้งาน </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Allow_DESCRIPTION)
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <b>  สถานะของงาน </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.STA_DESCRIPTION)
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>
+                    <b>  User login name </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Navi_HR_User_Log_In)
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <b>  วัตถุประสงค์ในการใช้งาน </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Navi_HR_Detail)
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <b>  วันที่แจ้ง </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Navi_HR_REQUESTER_DATE)
+                </td>
+
+            <tr>
+                <td>
+                    <b>  รหัสพนักงานผู้แจ้ง </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Navi_HR_REQUESTER)
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <b>  ชื่อผู้แจ้ง </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.NAME_REQUESTER)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>  ตำแหน่งผู้แจ้ง </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.PROSITION_REQUESTER)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>  ฝ่ายผู้แจ้ง </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.DEPARTMENT_REQUESTER)
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <b>  เบอร์ผู้แจ้ง </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.EXTENSION_REQUESTER)
+                </td>
+            </tr>
+
+
+           
+
+
+
+
+    </table>
+</div>

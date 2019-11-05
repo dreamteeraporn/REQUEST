@@ -1,0 +1,299 @@
+﻿@model REQUEST.Models.View_Req_PG_Trace
+
+@{
+    ViewBag.Title = "Details_Trace";
+}
+<center>
+
+    <h2>ติดตามการขอโปรแกรมคอมพิวเตอร์</h2>
+</center>
+<div>
+
+    <input type="button" class="btn btn-info" value="กลับไปหน้าติดตาม" onclick="location.href='@Url.Action("Index", "tbl_Req_AF")'" />
+
+</div>
+
+<div class="container">
+
+    <table class="table table-bordered table-striped">
+
+        <tbody style="font-size:16px;">
+
+            <tr>
+
+                <td>
+
+                    <b>   รหัสพนักงาน </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.USER_NO)
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>
+                    <b>  ชื่อ-สกุล(ไทย) </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.USER_NAME)
+                </td>
+
+            <tr>
+                <td>
+                    <b>  ชื่อ-สกุล(อังกฤษ) </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.NAME_ENG)
+                </td>
+            <tr>
+                <td>
+                    <b>  ตำแหน่ง </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.PROSITION)
+                </td>
+
+            <tr>
+                <td>
+                    <b>   ฝ่าย </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.DEPARTMENT)
+                </td>
+
+            <tr>
+                <td>
+                    <b>  เบอร์ติดต่อ </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.USER_EXTENSION)
+                </td>
+            </tr>
+
+
+
+            <tr>
+                <td>
+                    <b>  งาน </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.PG_Work)
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <b>  ปัญหา </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.PG_Problem)
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <b>  ความต้องการ</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.PG_Requirement)
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <b>  ความถี่ในการใช้งาน </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.PG_Frequency)
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <b>  ต้องการใช้วันที่ </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.PG_Date_start)
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <b>  สถานะของงาน </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.STA_DESCRIPTION)
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <b>   อนุมัติโดย (หัวหน้า) </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.PG_APPROVER)
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <b>  ชื่อผู้อนุมัติ (หัวหน้า) </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.NAME_APPROVER)
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <b>  ตำแหน่งผู้อนุมัติ(หัวหน้า) </b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.PROSITION_APPROVER)
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <b>  ฝ่ายผู้อนุมัติ (หัวหน้า)</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.DEPARTMENT_APPROVER)
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <b>  เบอร์ผู้อนุมัติ (หัวหน้า)</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.EXTENSION_APPROVER)
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <b>  วันที่อนุมัติ</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.PG_APPROVER_DATE)
+                </td>
+
+            </tr>
+
+
+            </tr>
+            <tr>
+                <td>
+                    <b>วันที่เปิดงาน</b>
+                </td>
+
+                <td>
+                    @Html.DisplayFor(model => model.Req_OPEN_DATE)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b> ผู้เปิดงาน</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Req_OPEN_BY)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b> ชื่อผู้เปิดงาน</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.NAME_OPEN)
+                    @Html.DisplayFor(model => model.SURNAME_OPEN)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b> เบอร์ผู้เปิดงาน</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.EXTENSION_OPEN)
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <b>วันที่ดำเนินงาน</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Req_ASSIGN_TO_DATE)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>รหัสพนักงานผู้ดำเนินงาน</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Req_ASSIGN_TO)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>ชื่อผู้ดำเนินงาน</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.NAME_ASSIGN)
+                    @Html.DisplayFor(model => model.SURNAME_ASSIGN)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>เบอร์ผู้ดำเนินงาน</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.EXTENSION_ASSIGN)
+                <td>
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <b> วันปิดงาน</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Req_CLOSE_DATE)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>ผู้ปิดงาน</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Req_CLOSE)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>ชื่อผู้ปิดงาน</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.NAME_CLOSE)
+                    @Html.DisplayFor(model => model.SURNAME_CLOSE)
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <b>เบอร์ผู้ปิดงาน</b>
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.EXTENSION_CLOSE)
+
+                </td>
+            </tr>
+
+
+
+
+
+</table>
+</div>

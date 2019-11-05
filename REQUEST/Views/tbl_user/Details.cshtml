@@ -1,0 +1,66 @@
+﻿@model REQUEST.Models.tbl_user
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tbl_user</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.USER_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER_PASSWORD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER_PASSWORD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER_LOGIN_TIME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER_LOGIN_TIME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER_LOGIN_FLAG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER_LOGIN_FLAG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER_STATUS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER_STATUS)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.USER_NO }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

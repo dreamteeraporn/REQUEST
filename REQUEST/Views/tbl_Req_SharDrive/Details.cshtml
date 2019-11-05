@@ -1,0 +1,187 @@
+﻿@model REQUEST.Models.View_Req_SD
+
+@{
+    ViewBag.Title = "Details";
+}
+    <center>
+        <h2>รายละเอียดการขอและยกเลิกรหัสผู้ใช้ เข้าสู่Share Drive</h2>
+    </center>
+    <div>
+
+        <div>
+            <input type="button" class="btn btn-info" value="กลับไปหน้ารายการ" onclick="location.href='@Url.Action("Index", "tbl_Req_SharDrive")'" />
+        </div>
+        <div class="container">
+
+            <table class="table table-bordered table-striped">
+
+                <tbody style="font-size:16px;">
+
+                    <tr>
+
+                        <td>
+                            <b> รหัสพนักงาน</b>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.USER_NO)
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <b> ชื่อ(ไทย)</b>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.USER_NAME)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>ชื่อ(อังกฤษ)</b>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.NAME_ENG)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>ตำแหน่ง</b>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.PROSITION)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b> ฝ่าย</b>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.DEPARTMENT)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b> เบอร์ติดต่อ</b>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.USER_EXTENSION)
+                        </td>
+                    </tr>
+
+
+
+
+                    <tr>
+                        <td>
+                            <b>สิทธิการใช้งาน</b>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Allow_DESCRIPTION)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <b>สถานะของงาน</b>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.STA_DESCRIPTION)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <b> Drive</b>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.SD_Drive)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <b>Folder</b>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.SD_Folder)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>สิทธิการเข้าถึง</b>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Authen_DESCRIPTION)
+                        </td>
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            <b>หมายเหตุ</b>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.SD_Note)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>วันที่แจ้ง</b>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.SD_DATE)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b> รหัสพนักงานผู้แจ้ง</b>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.SD_REQUESTER)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <b> ชื่อผู้แจ้ง</b>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.NAME_REQUESTER)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b> ตำแหน่งผู้แจ้ง</b>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.PROSITION_REQUESTER)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b> ฝ่ายผู้แจ้ง</b>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.DEPARTMENT_REQUESTER)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <b> เบอร์ผู้แจ้ง</b>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.PROSITION_REQUESTER)
+                        </td>
+                    </tr>
+
+
+</table>
+        </div>
+
+
+
+
+

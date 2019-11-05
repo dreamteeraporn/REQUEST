@@ -1,0 +1,108 @@
+﻿@model REQUEST.Models.NAV
+
+@{
+    ViewBag.Title = "Create";
+}
+    <center>
+        <h2>กรอกข้อมูลการขอสิทธิและแก้ไขเพิ่มเติมการใช้ระบบ NAV</h2>
+    </center>
+    <input type="button" class="btn btn-info" value="กลับไปหน้ารายการ" onclick="location.href='@Url.Action("Index", "tbl_Req_Nav")'" />
+    
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.REQ_STATUS, "สถานะของงาน", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.EditorFor(model => model.REQ_STATUS, new { htmlAttributes = new { @class = "form-control", @Value = "01", @readonly = "true" } })
+            @Html.ValidationMessageFor(model => model.REQ_STATUS, "หมายเหตุ 01 ลงทะเบียน ", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Allow_STATUS, "สิทธิการใช้งาน", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+
+            @Html.DropDownListFor(model => model.Allow_STATUS, new List<SelectListItem>
+    {
+
+    new SelectListItem{ Text="ขอสิทธิ", Value="01"},
+    new SelectListItem { Text="แก้ไขและเพิ่มเติมสิทธิ", Value="02" },
+    new SelectListItem { Text="ยกเลิกสิทธิ", Value="03" },
+   }, "กรุณาเลือก", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Allow_STATUS, "", new { @class = "text-danger" })
+        </div>
+    </div>
+   
+    <div class="form-group">
+        @Html.LabelFor(model => model.SECTION_ID, "เลือกส่วน/ฝ่าย", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+
+            @Html.DropDownListFor(model => model.SECTION_ID, new List<SelectListItem>
+    {
+
+    new SelectListItem{ Text="ฝ่ายโรงงาน 1, ฝ่ายโรงงาน2, ฝ่ายโรงงานโคราช", Value="01"},
+    new SelectListItem { Text="ฝ่ายขาย ODM, E-Channel , Retail-Channel", Value="02" },
+    new SelectListItem { Text="ฝ่ายต้นแบบ", Value="03" },
+    new SelectListItem{ Text="ฝ่ายต้นทุนและราคา", Value="04"},
+    new SelectListItem { Text="ฝ่ายบัญชี", Value="05" },
+    new SelectListItem { Text="ฝ่ายพัฒนาภัณฑ์", Value="06" },
+    new SelectListItem{ Text="ฝ่ายวางแผนการผลิต", Value="07"},
+    new SelectListItem { Text="ฝ่ายอัญมณี", Value="08" },
+    new SelectListItem { Text="ฝ่ายขนส่งและพิธีการศุลกากร", Value="09" },
+    new SelectListItem{ Text="ฝ่ายคลังสินค้า(ส่วนจัดส่งสินค้า)", Value="10"},
+    new SelectListItem { Text="ฝ่ายคลังสินค้า(ส่วนคลังวัสดุสิ้นเปลืองและจัดซื้อ)", Value="11" },
+    new SelectListItem { Text="ฝ่ายคลังสินค้า(ส่วนคลังวัตถุดิบและแม่พิมพ์)", Value="12" },
+    new SelectListItem{ Text="ส่วนคลังวัตถุดิบ และ Supply โคราช", Value="13"},
+    new SelectListItem { Text="ส่วนจัดซื้อต่างประเทศ", Value="14" },
+    new SelectListItem { Text="ส่วนบำรุงรักษา", Value="15" },
+    new SelectListItem{ Text="ส่วนประสานการผลิตต่างประเทศ", Value="16"},
+    new SelectListItem { Text="สำนักงานตรวจสอบภายใน", Value="17" },
+    new SelectListItem { Text="คลังสำเร็จรูป-งานคืนงานซ่อม-คลังทัณฑ์บน", Value="18" },
+   }, "กรุณาเลือก", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.SECTION_ID, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.USER_NO, "รหัสพนักงาน", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-4">
+            @Html.EditorFor(model => model.USER_NO, new { htmlAttributes = new { @class = "form-control", @Value = Session["USER_NO"].ToString(), @readonly = "true" } })
+            @Html.ValidationMessageFor(model => model.USER_NO, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.DATE_NAV, "วันที่แจ้ง", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-8">
+            @Html.EditorFor(model => model.DATE_NAV, new { htmlAttributes = new { @class = "form-control", @Value = DateTime.Now.ToShortDateString(), @readonly = "true" } })
+            @Html.ValidationMessageFor(model => model.DATE_NAV, " ", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.NAV_Detail, "รายละเอียดและสิ่งที่ต้องการ", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-8">
+            @Html.EditorFor(model => model.NAV_Detail, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.NAV_Detail, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.NAV_DOC, "เอกสารแนบ(ถ้ามี)", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-8">
+            @Html.EditorFor(model => model.NAV_DOC, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.NAV_DOC, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="ยืนยัน" class="btn btn-default" style="background-color:#8cb9e5" />
+        </div>
+    </div>
+</div>
+}

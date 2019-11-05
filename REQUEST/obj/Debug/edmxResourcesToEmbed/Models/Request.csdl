@@ -1,0 +1,1705 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="IT_ASSET_MANAGEMENTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tbl_assesories">
+    <Key>
+      <PropertyRef Name="ASS_ID" />
+    </Key>
+    <Property Name="ASS_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ASSESORIES" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ASS_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_buy_reason">
+    <Key>
+      <PropertyRef Name="REASON_ID" />
+    </Key>
+    <Property Name="REASON_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="REASON_DESCRIPTION" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_categories">
+    <Key>
+      <PropertyRef Name="INC_CATEGORIES" />
+    </Key>
+    <Property Name="INC_CATEGORIES" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CATE_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_cost_section">
+    <Key>
+      <PropertyRef Name="COST_ID" />
+      <PropertyRef Name="COST_SECTION" />
+    </Key>
+    <Property Name="COST_ID" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="COST_SECTION" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="COST_DESC2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_costcenter">
+    <Key>
+      <PropertyRef Name="COST_ID" />
+    </Key>
+    <Property Name="COST_ID" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="COSTCENTER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_device_types">
+    <Key>
+      <PropertyRef Name="DEV_CODE" />
+    </Key>
+    <Property Name="DEV_ID" Type="Int32" Nullable="false" />
+    <Property Name="DEV_CODE" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DEV_DESCRIPTION" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="PREFIX" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LAST_DIGIT" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_doc_group">
+    <Key>
+      <PropertyRef Name="DOC_GROUP" />
+    </Key>
+    <Property Name="DOC_GROUP" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GRO_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_doc_type">
+    <Key>
+      <PropertyRef Name="DOC_TYPE" />
+    </Key>
+    <Property Name="DOC_TYPE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DOC_TYPE_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DOC_LOCATION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="upsize_ts" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="tbl_document">
+    <Key>
+      <PropertyRef Name="DOC_NO" />
+    </Key>
+    <Property Name="DOC_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DOC_NO" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DOC_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DOC_YEAR" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DOC_DESCRIPTION" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DOC_TYPE" Type="Int32" Nullable="false" />
+    <Property Name="SUPPLIER" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DOC_START_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DOC_END_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="COST_ID" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="DOC_LOCATION_REF" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DOC_REFERENCE_COM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DOC_REFERENCE_DOC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DOC_ATTACH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DOC_REMARK" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DOC_STATUS" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USER_CREATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="USER_UPDATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CREATE_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="UPDATE_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="HW_WARANTEE" Type="Int32" Nullable="false" />
+    <Property Name="HW_WAR_YEAR" Type="Int32" Nullable="false" />
+    <Property Name="upsize_ts" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="DOC_GROUP" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_hw_assets">
+    <Key>
+      <PropertyRef Name="HW_CODE" />
+    </Key>
+    <Property Name="HW_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HW_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DEV_CODE" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="HW_ASSET" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HW_ASSET_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HW_YEAR" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="HW_START_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="HW_END_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="HW_BRAND" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="HW_MODEL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HW_SERIAL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PC_CODE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="COST_ID" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="HW_SERVICE_TAG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HW_DESC_SHORT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HW_DESCRIPT_LONG" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HW_PURCHASE_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="HW_PURCHASE_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="HW_PICTURE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SUPPLIER" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="HW_WARANTEE" Type="Int32" Nullable="false" />
+    <Property Name="HW_WAR_YEAR" Type="Int32" Nullable="false" />
+    <Property Name="HW_WAR_END_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DOC_NO" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="HW_RENT" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ST_ID" Type="Int32" Nullable="false" />
+    <Property Name="HW_REMARK" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HW_IP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="HW_MAX_ADDRESS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="USER_CREATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="USER_UPDATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CREATE_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="UPDATE_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="HW_DEPT_NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="HW_INSTALL_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="HW_OWNNER" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="upsize_ts" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="tbl_hw_log_case">
+    <Key>
+      <PropertyRef Name="HW_CODE" />
+      <PropertyRef Name="HW_TX_DATE" />
+    </Key>
+    <Property Name="HW_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="HW_TX_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="HW_LOG_CASE" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="HW_LOG_DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="USER_CREATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="USER_UPDATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CREATE_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="UPDATE_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="upsize_ts" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="tbl_hw_options_addon">
+    <Key>
+      <PropertyRef Name="HW_CODE" />
+      <PropertyRef Name="SEQ" />
+    </Key>
+    <Property Name="HW_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SEQ" Type="Int32" Nullable="false" />
+    <Property Name="ASSESORIES" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="REMARK" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ADD_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="USER_CREATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="USER_UPDATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CREATE_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="UPDATE_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_hw_sw_standard">
+    <Key>
+      <PropertyRef Name="HW_CODE" />
+      <PropertyRef Name="DEV_SW_CODE" />
+    </Key>
+    <Property Name="HW_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DEV_SW_CODE" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DEV_SW_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SW_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SW_START_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="SW_END_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="HW_SW_REMARK" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="upsize_ts" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="PC_CODE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_hw_terminate">
+    <Key>
+      <PropertyRef Name="HW_CODE" />
+    </Key>
+    <Property Name="HW_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="HW_TERMIANATE" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="HW_TERM_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="HW_REASON_REMARK" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HW_TERM_APPROVE" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="USER_CREATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="USER_UPDATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CREATE_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="UPDATE_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="upsize_ts" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="tbl_incident_case">
+    <Key>
+      <PropertyRef Name="INC_CODE" />
+    </Key>
+    <Property Name="INC_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="INC_CODE" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="INC_DATE" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="INC_TOPIC" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="INC_REQUESTER" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="INC_OPEN_BY" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="INC_ASSIGN_TO" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="INC_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="INC_CATEGORIES" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="INC_PRIORITY" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="INC_BILL_NO" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="INC_BILL_DATE" Type="DateTime" Precision="0" />
+    <Property Name="INC_OPEN_DATE" Type="DateTime" Precision="0" />
+    <Property Name="INC_DUE_DATE" Type="DateTime" Precision="0" />
+    <Property Name="INC_RESOLVE_DATE" Type="DateTime" Precision="0" />
+    <Property Name="INC_COST" Type="Single" />
+    <Property Name="INC_WARANTEE" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="INC_DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="INC_COMMENTS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="USER_CREATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="USER_UPDATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CREATE_DATE" Type="DateTime" Precision="0" />
+    <Property Name="UPDATE_DATE" Type="DateTime" Precision="0" />
+    <Property Name="upsize_ts" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="HW_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="INC_CLOSE_DATE" Type="DateTime" Precision="0" />
+    <Property Name="COST_ID" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="INC_SUBMIT_DATE" Type="DateTime" Precision="0" />
+    <Property Name="INC_ASSIGN_DATE" Type="DateTime" Precision="0" />
+    <Property Name="COST_SECTION" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="INC_CANCEL_DATE" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="tbl_incident_part">
+    <Key>
+      <PropertyRef Name="IS_ID" />
+    </Key>
+    <Property Name="IS_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IS_PICTURE_PART" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="IS_PURCHASE_PART" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="IS_MA_PART" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="IS_MANUAL_PART" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="IS_CONTRACT_PART" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="IS_OTH_PART" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_Incident_status">
+    <Key>
+      <PropertyRef Name="INC_STATUS" />
+    </Key>
+    <Property Name="INC_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="STA_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_it_staff">
+    <Key>
+      <PropertyRef Name="EMP_NO" />
+    </Key>
+    <Property Name="EMP_NO" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IT_SURNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IT_SECTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IT_EXTENSION" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_pc_standards">
+    <Key>
+      <PropertyRef Name="PC_CODE" />
+    </Key>
+    <Property Name="PC_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PC_CODE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PC_YEAR" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PC_DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PC_REMARK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="upsize_ts" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="tbl_pc_sw_standard">
+    <Key>
+      <PropertyRef Name="PC_CODE" />
+      <PropertyRef Name="DEV_SW_CODE" />
+    </Key>
+    <Property Name="PC_CODE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DEV_SW_CODE" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DEV_SW_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_req_allow_status">
+    <Key>
+      <PropertyRef Name="Allow_STATUS" />
+    </Key>
+    <Property Name="Allow_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Allow_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_req_types">
+    <Key>
+      <PropertyRef Name="REQ_TYPE" />
+    </Key>
+    <Property Name="REQ_TYPE" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="REQ_TYPE_DESC" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="REQ_PREFIX" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_request_status">
+    <Key>
+      <PropertyRef Name="REQ_STATUS" />
+    </Key>
+    <Property Name="REQ_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="STA_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_staff_member">
+    <Key>
+      <PropertyRef Name="EMP_NO" />
+    </Key>
+    <Property Name="EMP_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EMP_NO" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EMP_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EMP_SURNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="COST_ID" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EMP_SECTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EMP_EXTENSION" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="EMP_LOCATION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_status_hw">
+    <Key>
+      <PropertyRef Name="ST_ID" />
+    </Key>
+    <Property Name="ST_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ST_DESCRIPTION" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_supplier">
+    <Key>
+      <PropertyRef Name="SUPPLIER" />
+    </Key>
+    <Property Name="SUPPLIER" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SUPPLIER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SUPPLIER_TYPE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="SUPPLIER_CONTACT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SUPPLIER_PHONE_1" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="SUPPLIER_PHONE_2" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="SUPPLIER_NOTE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SUPPLIER_STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="SUPPLIER_ADDRESS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SUPPLIER_SHORT" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="SUPPLIER_AREA" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="SUPPLIER_MAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_sw_assets">
+    <Key>
+      <PropertyRef Name="SW_CODE" />
+    </Key>
+    <Property Name="SW_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SW_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DEV_SW_CODE" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SW_ASSET" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SW_ASSET_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SW_YEAR" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SW_START_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="SW_END_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="SW_BRAND" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="HW_SERIAL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="COST_ID" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SW_SERVICE_TAG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SW_DESC_SHORT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SW_DESCRIPT_LONG" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SW_PURCHASE_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SW_PURCHASE_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="SW_PICTURE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SW_QTY" Type="Decimal" Precision="6" Scale="0" Nullable="false" />
+    <Property Name="SUPPLIER" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SW_WARANTEE" Type="Int32" Nullable="false" />
+    <Property Name="DOC_NO" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="SW_RENT" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ST_ID" Type="Int32" Nullable="false" />
+    <Property Name="SW_REMARK" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="USER_CREATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="USER_UPDATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CREATE_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="UPDATE_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="upsize_ts" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="tbl_sw_type">
+    <Key>
+      <PropertyRef Name="DEV_SW_CODE" />
+    </Key>
+    <Property Name="DEV_SW_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DEV_SW_CODE" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DEV_SW_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEV_SW_EST_PRICE" Type="Decimal" Precision="10" Scale="4" />
+  </EntityType>
+  <EntityType Name="tbl_user">
+    <Key>
+      <PropertyRef Name="USER_NO" />
+    </Key>
+    <Property Name="USER_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USER_NO" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USER_PASSWORD" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USER_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="USER_LOGIN_TIME" Type="DateTime" Precision="3" />
+    <Property Name="USER_LOGIN_FLAG" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="USER_STATUS" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USER_EMAIL" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="USER_EXTENSION" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="USER_ROLE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_ENG" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PROSITION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_year_document_number">
+    <Key>
+      <PropertyRef Name="Year" />
+      <PropertyRef Name="DocType" />
+    </Key>
+    <Property Name="Year" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DocType" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PrefixText" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="StartNumber" Type="Single" />
+    <Property Name="LastNumber" Type="Single" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="UPDATE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="USER_CREATE" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="USER_UPDATE" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="upsize_ts" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="TblLocalTable">
+    <Key>
+      <PropertyRef Name="PrintPreview" />
+    </Key>
+    <Property Name="PrintPreview" Type="Boolean" Nullable="false" />
+    <Property Name="LastUserID" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="LastDate" Type="DateTime" Precision="3" />
+    <Property Name="LastLang" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_configure">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="INC_NO_RUN" />
+      <PropertyRef Name="REQ_NO_RUN" />
+      <PropertyRef Name="AUD_NO_RUN" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DOC_LOCATION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PIC_LOCATION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AUD_LOCATION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="INC_NO_PRF" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="INC_NO_YEAR" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="REQ_NO_PRF" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="REQ_NO_YEAR" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="AUD_NO_PRF" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="AUD_NO_YEAR" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="INC_NO_RUN" Type="Int32" Nullable="false" />
+    <Property Name="REQ_NO_RUN" Type="Int32" Nullable="false" />
+    <Property Name="AUD_NO_RUN" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="View_costcenter">
+    <Key>
+      <PropertyRef Name="COST_ID" />
+    </Key>
+    <Property Name="COST_ID" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="COSTCENTER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="View_device_type">
+    <Key>
+      <PropertyRef Name="DEV_ID" />
+      <PropertyRef Name="DEV_CODE" />
+      <PropertyRef Name="PREFIX" />
+      <PropertyRef Name="LAST_DIGIT" />
+    </Key>
+    <Property Name="DEV_ID" Type="Int32" Nullable="false" />
+    <Property Name="DEV_CODE" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DEV_DESCRIPTION" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="PREFIX" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LAST_DIGIT" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="View_document">
+    <Key>
+      <PropertyRef Name="DOC_ID" />
+      <PropertyRef Name="DOC_NO" />
+      <PropertyRef Name="DOC_YEAR" />
+      <PropertyRef Name="DOC_DESCRIPTION" />
+      <PropertyRef Name="DOC_TYPE" />
+      <PropertyRef Name="DOC_STATUS" />
+      <PropertyRef Name="HW_WARANTEE" />
+      <PropertyRef Name="HW_WAR_YEAR" />
+      <PropertyRef Name="DOC_TYPE_DESC" />
+    </Key>
+    <Property Name="DOC_ID" Type="Int32" Nullable="false" />
+    <Property Name="DOC_NO" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DOC_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DOC_YEAR" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DOC_DESCRIPTION" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DOC_TYPE" Type="Int32" Nullable="false" />
+    <Property Name="SUPPLIER" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DOC_START_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DOC_END_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="COST_ID" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="DOC_LOCATION_REF" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DOC_REFERENCE_COM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DOC_REFERENCE_DOC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DOC_ATTACH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DOC_REMARK" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DOC_STATUS" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USER_CREATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="USER_UPDATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CREATE_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="UPDATE_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="HW_WARANTEE" Type="Int32" Nullable="false" />
+    <Property Name="HW_WAR_YEAR" Type="Int32" Nullable="false" />
+    <Property Name="DOC_TYPE_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="View_hw_assets">
+    <Key>
+      <PropertyRef Name="HW_ID" />
+      <PropertyRef Name="HW_CODE" />
+      <PropertyRef Name="DEV_CODE" />
+      <PropertyRef Name="HW_YEAR" />
+      <PropertyRef Name="COST_ID" />
+      <PropertyRef Name="HW_WARANTEE" />
+      <PropertyRef Name="HW_WAR_YEAR" />
+      <PropertyRef Name="HW_RENT" />
+      <PropertyRef Name="ST_ID" />
+    </Key>
+    <Property Name="HW_ID" Type="Int32" Nullable="false" />
+    <Property Name="HW_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DEV_CODE" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="HW_ASSET" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HW_ASSET_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HW_YEAR" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="HW_START_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="HW_END_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="HW_BRAND" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="HW_MODEL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HW_SERIAL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PC_CODE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="COST_ID" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="HW_SERVICE_TAG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HW_DESC_SHORT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HW_DESCRIPT_LONG" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HW_PURCHASE_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="HW_PURCHASE_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="HW_PICTURE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SUPPLIER" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="HW_WARANTEE" Type="Int32" Nullable="false" />
+    <Property Name="HW_WAR_YEAR" Type="Int32" Nullable="false" />
+    <Property Name="HW_WAR_END_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DOC_NO" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="HW_RENT" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ST_ID" Type="Int32" Nullable="false" />
+    <Property Name="HW_REMARK" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HW_IP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="HW_MAX_ADDRESS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="USER_CREATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="USER_UPDATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CREATE_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="UPDATE_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="HW_DEPT_NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DEV_DESCRIPTION" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="PC_REMARK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PC_DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="COSTCENTER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ST_DESCRIPTION" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="HW_INSTALL_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="HW_OWNNER" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="View_hw_options_addon">
+    <Key>
+      <PropertyRef Name="HW_CODE" />
+      <PropertyRef Name="SEQ" />
+      <PropertyRef Name="ASSESORIES" />
+    </Key>
+    <Property Name="HW_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SEQ" Type="Int32" Nullable="false" />
+    <Property Name="ASSESORIES" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="REMARK" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ADD_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="USER_CREATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="USER_UPDATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CREATE_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="UPDATE_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="View_hw_sw_standard">
+    <Key>
+      <PropertyRef Name="HW_CODE" />
+      <PropertyRef Name="DEV_SW_CODE" />
+    </Key>
+    <Property Name="HW_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DEV_SW_CODE" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DEV_SW_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SW_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SW_START_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="SW_END_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="HW_SW_REMARK" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="upsize_ts" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="View_inc_status">
+    <Key>
+      <PropertyRef Name="INC_CODE" />
+      <PropertyRef Name="INC_DATE" />
+      <PropertyRef Name="USER_NO" />
+    </Key>
+    <Property Name="INC_CODE" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="INC_DATE" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="INC_TOPIC" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="INC_REQUESTER" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="INC_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="STA_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="INC_DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="USER_NO" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USER_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="View_incident_all">
+    <Key>
+      <PropertyRef Name="INC_CODE" />
+      <PropertyRef Name="INC_DATE" />
+      <PropertyRef Name="CATE_DESC" />
+    </Key>
+    <Property Name="INC_CODE" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="INC_DATE" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="INC_TOPIC" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="INC_REQUESTER" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="INC_OPEN_BY" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="INC_ASSIGN_TO" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="INC_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="INC_CATEGORIES" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="INC_BILL_NO" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="INC_BILL_DATE" Type="DateTime" Precision="0" />
+    <Property Name="INC_OPEN_DATE" Type="DateTime" Precision="0" />
+    <Property Name="INC_DUE_DATE" Type="DateTime" Precision="0" />
+    <Property Name="INC_RESOLVE_DATE" Type="DateTime" Precision="0" />
+    <Property Name="INC_DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HW_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="INC_CLOSE_DATE" Type="DateTime" Precision="0" />
+    <Property Name="COST_ID" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="INC_SUBMIT_DATE" Type="DateTime" Precision="0" />
+    <Property Name="INC_ASSIGN_DATE" Type="DateTime" Precision="0" />
+    <Property Name="COST_SECTION" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="INC_CANCEL_DATE" Type="DateTime" Precision="0" />
+    <Property Name="STA_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EMP_NO" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="IT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IT_SURNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EMP_ASSIGN" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="EMP_ASSIGN_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EMP_ASSIGN_SURNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Expr1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="HW_ASSET" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HW_ASSET_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="USER_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="USER_NO" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="INC_COMMENTS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CATE_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="View_incident_case">
+    <Key>
+      <PropertyRef Name="INC_ID" />
+      <PropertyRef Name="INC_CODE" />
+      <PropertyRef Name="INC_DATE" />
+    </Key>
+    <Property Name="INC_ID" Type="Int32" Nullable="false" />
+    <Property Name="INC_CODE" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="INC_DATE" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="INC_TOPIC" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="INC_REQUESTER" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="INC_OPEN_BY" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="INC_ASSIGN_TO" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="INC_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="INC_CATEGORIES" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="INC_PRIORITY" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="INC_BILL_NO" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="INC_BILL_DATE" Type="DateTime" Precision="0" />
+    <Property Name="INC_OPEN_DATE" Type="DateTime" Precision="0" />
+    <Property Name="INC_DUE_DATE" Type="DateTime" Precision="0" />
+    <Property Name="INC_RESOLVE_DATE" Type="DateTime" Precision="0" />
+    <Property Name="INC_COST" Type="Single" />
+    <Property Name="INC_WARANTEE" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="INC_DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="INC_COMMENTS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="USER_CREATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="USER_UPDATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CREATE_DATE" Type="DateTime" Precision="0" />
+    <Property Name="UPDATE_DATE" Type="DateTime" Precision="0" />
+    <Property Name="REQUESTER" Type="String" MaxLength="101" FixedLength="false" Unicode="true" />
+    <Property Name="HW_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="INC_CLOSE_DATE" Type="DateTime" Precision="0" />
+    <Property Name="STA_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CATE_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="COST_ID" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="INC_SUBMIT_DATE" Type="DateTime" Precision="0" />
+    <Property Name="INC_ASSIGN_DATE" Type="DateTime" Precision="0" />
+    <Property Name="COST_SECTION" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="INC_CANCEL_DATE" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="View_it_open_by">
+    <Key>
+      <PropertyRef Name="EMP_NO" />
+      <PropertyRef Name="EMP_NO_ASSIGN" />
+    </Key>
+    <Property Name="EMP_NO" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IT_SURNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="INC_OPEN_BY" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="INC_ASSIGN_TO" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="EMP_NO_ASSIGN" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IT_NAME_ASSIGN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IT_SURNAME_ASSIGN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="View_pc_standards">
+    <Key>
+      <PropertyRef Name="PC_ID" />
+      <PropertyRef Name="PC_CODE" />
+      <PropertyRef Name="PC_YEAR" />
+    </Key>
+    <Property Name="PC_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PC_CODE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PC_YEAR" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PC_DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PC_REMARK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="upsize_ts" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="View_pc_sw_standard">
+    <Key>
+      <PropertyRef Name="PC_CODE" />
+      <PropertyRef Name="DEV_SW_CODE" />
+    </Key>
+    <Property Name="PC_CODE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DEV_SW_CODE" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DEV_SW_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="View_staff_member">
+    <Key>
+      <PropertyRef Name="EMP_ID" />
+      <PropertyRef Name="EMP_NO" />
+      <PropertyRef Name="EMP_NAME" />
+      <PropertyRef Name="COST_ID" />
+    </Key>
+    <Property Name="EMP_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EMP_NO" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EMP_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EMP_SURNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="COST_ID" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EMP_SECTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EMP_EXTENSION" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="EMP_LOCATION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NAME" Type="String" MaxLength="101" FixedLength="false" Unicode="true" />
+    <Property Name="NAME2" Type="String" MaxLength="117" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="View_sw_assets">
+    <Key>
+      <PropertyRef Name="SW_ID" />
+      <PropertyRef Name="SW_CODE" />
+      <PropertyRef Name="DEV_SW_CODE" />
+      <PropertyRef Name="SW_YEAR" />
+      <PropertyRef Name="COST_ID" />
+      <PropertyRef Name="SW_QTY" />
+      <PropertyRef Name="SW_WARANTEE" />
+      <PropertyRef Name="SW_RENT" />
+      <PropertyRef Name="ST_ID" />
+    </Key>
+    <Property Name="SW_ID" Type="Int32" Nullable="false" />
+    <Property Name="SW_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DEV_SW_CODE" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SW_ASSET" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SW_ASSET_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SW_YEAR" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SW_START_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="SW_END_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="SW_BRAND" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="HW_SERIAL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="COST_ID" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SW_SERVICE_TAG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SW_DESC_SHORT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SW_DESCRIPT_LONG" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SW_PURCHASE_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SW_PURCHASE_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="SW_PICTURE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SW_QTY" Type="Decimal" Precision="6" Scale="0" Nullable="false" />
+    <Property Name="SUPPLIER" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SW_WARANTEE" Type="Int32" Nullable="false" />
+    <Property Name="DOC_NO" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="SW_RENT" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ST_ID" Type="Int32" Nullable="false" />
+    <Property Name="SW_REMARK" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="USER_CREATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="USER_UPDATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CREATE_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="UPDATE_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DEV_SW_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="COSTCENTER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="IT_ASSET_MANAGEMENTEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbl_assesories" EntityType="Self.tbl_assesories" />
+    <EntitySet Name="tbl_buy_reason" EntityType="Self.tbl_buy_reason" />
+    <EntitySet Name="tbl_categories" EntityType="Self.tbl_categories" />
+    <EntitySet Name="tbl_cost_section" EntityType="Self.tbl_cost_section" />
+    <EntitySet Name="tbl_costcenter" EntityType="Self.tbl_costcenter" />
+    <EntitySet Name="tbl_device_types" EntityType="Self.tbl_device_types" />
+    <EntitySet Name="tbl_doc_group" EntityType="Self.tbl_doc_group" />
+    <EntitySet Name="tbl_doc_type" EntityType="Self.tbl_doc_type" />
+    <EntitySet Name="tbl_document" EntityType="Self.tbl_document" />
+    <EntitySet Name="tbl_hw_assets" EntityType="Self.tbl_hw_assets" />
+    <EntitySet Name="tbl_hw_log_case" EntityType="Self.tbl_hw_log_case" />
+    <EntitySet Name="tbl_hw_options_addon" EntityType="Self.tbl_hw_options_addon" />
+    <EntitySet Name="tbl_hw_sw_standard" EntityType="Self.tbl_hw_sw_standard" />
+    <EntitySet Name="tbl_hw_terminate" EntityType="Self.tbl_hw_terminate" />
+    <EntitySet Name="tbl_incident_case" EntityType="Self.tbl_incident_case" />
+    <EntitySet Name="tbl_incident_part" EntityType="Self.tbl_incident_part" />
+    <EntitySet Name="tbl_Incident_status" EntityType="Self.tbl_Incident_status" />
+    <EntitySet Name="tbl_it_staff" EntityType="Self.tbl_it_staff" />
+    <EntitySet Name="tbl_pc_standards" EntityType="Self.tbl_pc_standards" />
+    <EntitySet Name="tbl_pc_sw_standard" EntityType="Self.tbl_pc_sw_standard" />
+    <EntitySet Name="tbl_req_allow_status" EntityType="Self.tbl_req_allow_status" />
+    <EntitySet Name="tbl_req_types" EntityType="Self.tbl_req_types" />
+    <EntitySet Name="tbl_request_status" EntityType="Self.tbl_request_status" />
+    <EntitySet Name="tbl_staff_member" EntityType="Self.tbl_staff_member" />
+    <EntitySet Name="tbl_status_hw" EntityType="Self.tbl_status_hw" />
+    <EntitySet Name="tbl_supplier" EntityType="Self.tbl_supplier" />
+    <EntitySet Name="tbl_sw_assets" EntityType="Self.tbl_sw_assets" />
+    <EntitySet Name="tbl_sw_type" EntityType="Self.tbl_sw_type" />
+    <EntitySet Name="tbl_user" EntityType="Self.tbl_user" />
+    <EntitySet Name="tbl_year_document_number" EntityType="Self.tbl_year_document_number" />
+    <EntitySet Name="TblLocalTables" EntityType="Self.TblLocalTable" />
+    <EntitySet Name="tbl_configure" EntityType="Self.tbl_configure" />
+    <EntitySet Name="View_costcenter" EntityType="Self.View_costcenter" />
+    <EntitySet Name="View_device_type" EntityType="Self.View_device_type" />
+    <EntitySet Name="View_document" EntityType="Self.View_document" />
+    <EntitySet Name="View_hw_assets" EntityType="Self.View_hw_assets" />
+    <EntitySet Name="View_hw_options_addon" EntityType="Self.View_hw_options_addon" />
+    <EntitySet Name="View_hw_sw_standard" EntityType="Self.View_hw_sw_standard" />
+    <EntitySet Name="View_inc_status" EntityType="Self.View_inc_status" />
+    <EntitySet Name="View_incident_all" EntityType="Self.View_incident_all" />
+    <EntitySet Name="View_incident_case" EntityType="Self.View_incident_case" />
+    <EntitySet Name="View_it_open_by" EntityType="Self.View_it_open_by" />
+    <EntitySet Name="View_pc_standards" EntityType="Self.View_pc_standards" />
+    <EntitySet Name="View_pc_sw_standard" EntityType="Self.View_pc_sw_standard" />
+    <EntitySet Name="View_staff_member" EntityType="Self.View_staff_member" />
+    <EntitySet Name="View_sw_assets" EntityType="Self.View_sw_assets" />
+    <EntitySet Name="tbl_Req_Applicant" EntityType="IT_ASSET_MANAGEMENTModel.tbl_Req_Applicant" />
+    <FunctionImport Name="AutoAF">
+      <Parameter Name="Req_AF_CODE" Mode="InOut" Type="String" />
+      <Parameter Name="Allow_STATUS" Mode="In" Type="String" />
+      <Parameter Name="USER_NO" Mode="In" Type="String" />
+      <Parameter Name="AF_Site" Mode="In" Type="String" />
+      <Parameter Name="AF_Folder" Mode="In" Type="String" />
+      <Parameter Name="AF_STATUS_ID" Mode="In" Type="String" />
+      <Parameter Name="REQ_STATUS" Mode="In" Type="String" />
+      <Parameter Name="AF_Note" Mode="In" Type="String" />
+      <Parameter Name="AF_REQUESTER" Mode="In" Type="String" />
+      <Parameter Name="AF_DATE" Mode="In" Type="DateTime" />
+      <Parameter Name="AF_APPROVER" Mode="In" Type="String" />
+      <Parameter Name="Date_APPROVER" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="AutoProgram">
+      <Parameter Name="Req_PG_CODE" Mode="InOut" Type="String" />
+      <Parameter Name="USER_NO" Mode="In" Type="String" />
+      <Parameter Name="PG_DATE" Mode="In" Type="DateTime" />
+      <Parameter Name="PG_Work" Mode="In" Type="String" />
+      <Parameter Name="PG_Problem" Mode="In" Type="String" />
+      <Parameter Name="PG_Requirement" Mode="In" Type="String" />
+      <Parameter Name="PG_Frequency" Mode="In" Type="String" />
+      <Parameter Name="PG_Date_start" Mode="In" Type="DateTime" />
+      <Parameter Name="REQ_STATUS" Mode="In" Type="String" />
+      <Parameter Name="PG_APPROVER" Mode="In" Type="String" />
+      <Parameter Name="PG_APPROVER_DATE" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="AutoSharDrive">
+      <Parameter Name="Req_SD_CODE" Mode="InOut" Type="String" />
+      <Parameter Name="Allow_STATUS" Mode="In" Type="String" />
+      <Parameter Name="ID_Authen" Mode="In" Type="String" />
+      <Parameter Name="USER_NO" Mode="In" Type="String" />
+      <Parameter Name="SD_DATE" Mode="In" Type="DateTime" />
+      <Parameter Name="SD_Drive" Mode="In" Type="String" />
+      <Parameter Name="SD_Folder" Mode="In" Type="String" />
+      <Parameter Name="SD_Note" Mode="In" Type="String" />
+      <Parameter Name="SD_REQUESTER" Mode="In" Type="String" />
+      <Parameter Name="SD_APPROVER" Mode="In" Type="String" />
+      <Parameter Name="Date_APPROVER" Mode="In" Type="DateTime" />
+      <Parameter Name="REQ_STATUS" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="tbl_Req_Authen" EntityType="IT_ASSET_MANAGEMENTModel.tbl_Req_Authen" />
+    <FunctionImport Name="AutoNaviHR">
+      <Parameter Name="Req_Navi_HR_CODE" Mode="InOut" Type="String" />
+      <Parameter Name="USER_NO" Mode="In" Type="String" />
+      <Parameter Name="Allow_STATUS" Mode="In" Type="String" />
+      <Parameter Name="Navi_HR_User_Log_In" Mode="In" Type="String" />
+      <Parameter Name="Navi_HR_Detail" Mode="In" Type="String" />
+      <Parameter Name="REQ_STATUS" Mode="In" Type="String" />
+      <Parameter Name="Navi_HR_REQUESTER" Mode="In" Type="String" />
+      <Parameter Name="Navi_HR_REQUESTER_DATE" Mode="In" Type="DateTime" />
+      <Parameter Name="Navi_HR_APPROVER" Mode="In" Type="String" />
+      <Parameter Name="Navi_HR_APPROVER_DATE" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <EntitySet Name="tbl_Req_AF" EntityType="IT_ASSET_MANAGEMENTModel.tbl_Req_AF" />
+    <EntitySet Name="tbl_AF_STATUS" EntityType="IT_ASSET_MANAGEMENTModel.tbl_AF_STATUS" />
+    <EntitySet Name="tbl_Req_Navi_HR" EntityType="IT_ASSET_MANAGEMENTModel.tbl_Req_Navi_HR" />
+    <EntitySet Name="tbl_Req_Program" EntityType="IT_ASSET_MANAGEMENTModel.tbl_Req_Program" />
+    <EntitySet Name="tbl_Req_SharDrive" EntityType="IT_ASSET_MANAGEMENTModel.tbl_Req_SharDrive" />
+    <EntitySet Name="View_Req_AF" EntityType="IT_ASSET_MANAGEMENTModel.View_Req_AF" />
+    <EntitySet Name="View_Req_Navi_HR_Trace" EntityType="IT_ASSET_MANAGEMENTModel.View_Req_Navi_HR_Trace" />
+    <EntitySet Name="View_Req_PG" EntityType="IT_ASSET_MANAGEMENTModel.View_Req_PG" />
+    <EntitySet Name="View_Req_PG_Trace" EntityType="IT_ASSET_MANAGEMENTModel.View_Req_PG_Trace" />
+    <EntitySet Name="View_Req_SD" EntityType="IT_ASSET_MANAGEMENTModel.View_Req_SD" />
+    <EntitySet Name="View_Req_AF_Trace" EntityType="IT_ASSET_MANAGEMENTModel.View_Req_AF_Trace" />
+    <EntitySet Name="View_Req_SD_Trace" EntityType="IT_ASSET_MANAGEMENTModel.View_Req_SD_Trace" />
+    <EntitySet Name="tbl_Req_Nav" EntityType="IT_ASSET_MANAGEMENTModel.tbl_Req_Nav" />
+    <EntitySet Name="tbl_section" EntityType="IT_ASSET_MANAGEMENTModel.tbl_section" />
+    <EntitySet Name="View_Req_NAV" EntityType="IT_ASSET_MANAGEMENTModel.View_Req_NAV" />
+    <EntitySet Name="View_Req_NAV_Trace" EntityType="IT_ASSET_MANAGEMENTModel.View_Req_NAV_Trace" />
+    <FunctionImport Name="AutoNAV">
+      <Parameter Name="Req_NAV_CODE" Mode="InOut" Type="String" />
+      <Parameter Name="USER_NO" Mode="In" Type="String" />
+      <Parameter Name="Allow_STATUS" Mode="In" Type="String" />
+      <Parameter Name="SECTION_ID" Mode="In" Type="String" />
+      <Parameter Name="DATE_NAV" Mode="In" Type="DateTime" />
+      <Parameter Name="NAV_Detail" Mode="In" Type="String" />
+      <Parameter Name="NAV_DOC" Mode="In" Type="String" />
+      <Parameter Name="NAV_APPROVER" Mode="In" Type="String" />
+      <Parameter Name="Date_APPROVER" Mode="In" Type="DateTime" />
+      <Parameter Name="REQ_STATUS" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AutoPDJ01">
+      <Parameter Name="Req_PDJ01_CODE" Mode="InOut" Type="String" />
+      <Parameter Name="USER_NO" Mode="In" Type="String" />
+      <Parameter Name="REQ_STATUS" Mode="In" Type="String" />
+      <Parameter Name="Allow_STATUS" Mode="In" Type="String" />
+      <Parameter Name="Color_Picture" Mode="In" Type="String" />
+      <Parameter Name="Quotation" Mode="In" Type="String" />
+      <Parameter Name="Spec_Sheet" Mode="In" Type="String" />
+      <Parameter Name="Produce_Prices" Mode="In" Type="String" />
+      <Parameter Name="Product_Analysis" Mode="In" Type="String" />
+      <Parameter Name="Line_Drawing" Mode="In" Type="String" />
+      <Parameter Name="PDJ01_REQUESTER" Mode="In" Type="String" />
+      <Parameter Name="PDJ01_REQUESTER_DATE" Mode="In" Type="DateTime" />
+      <Parameter Name="PDJ01_APPROVER" Mode="In" Type="String" />
+      <Parameter Name="PDJ01_APPROVER_DATE" Mode="In" Type="DateTime" />
+      <Parameter Name="APPROVER_MANAGER" Mode="In" Type="String" />
+      <Parameter Name="DATE_APPROVER_MANAGER" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <EntitySet Name="View_Req_Navi_HR" EntityType="IT_ASSET_MANAGEMENTModel.View_Req_Navi_HR" />
+    <EntitySet Name="View_Req_PDJCOST01_Trace" EntityType="IT_ASSET_MANAGEMENTModel.View_Req_PDJCOST01_Trace" />
+    <EntitySet Name="tbl_Req_PDJCOST01" EntityType="IT_ASSET_MANAGEMENTModel.tbl_Req_PDJCOST01" />
+    <EntitySet Name="View_Req_PDJCOST01" EntityType="IT_ASSET_MANAGEMENTModel.View_Req_PDJCOST01" />
+    <EntitySet Name="tbl_Req_PDJMINI02" EntityType="IT_ASSET_MANAGEMENTModel.tbl_Req_PDJMINI02" />
+    <EntitySet Name="View_Req_PDJMINI02" EntityType="IT_ASSET_MANAGEMENTModel.View_Req_PDJMINI02" />
+    <EntitySet Name="View_Req_PDJMINI02_Trace" EntityType="IT_ASSET_MANAGEMENTModel.View_Req_PDJMINI02_Trace" />
+    <FunctionImport Name="AutoPDJMINI02">
+      <Parameter Name="Req_PDJ02_CODE" Mode="InOut" Type="String" />
+      <Parameter Name="Allow_STATUS" Mode="In" Type="String" />
+      <Parameter Name="REQ_STATUS" Mode="In" Type="String" />
+      <Parameter Name="USER_NO" Mode="In" Type="String" />
+      <Parameter Name="Sample_Pdj02" Mode="In" Type="String" />
+      <Parameter Name="Proto_Pdj02" Mode="In" Type="String" />
+      <Parameter Name="PrototypeInfrom" Mode="In" Type="String" />
+      <Parameter Name="CHM_Pdj02" Mode="In" Type="String" />
+      <Parameter Name="PDJ02_REQUESTER" Mode="In" Type="String" />
+      <Parameter Name="PDJ02_REQUESTER_DATE" Mode="In" Type="DateTime" />
+      <Parameter Name="PDJ02_APPROVER" Mode="In" Type="String" />
+      <Parameter Name="PDJ02_APPROVER_DATE" Mode="In" Type="DateTime" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="tbl_Req_Applicant">
+    <Key>
+      <PropertyRef Name="ID_Applicant" />
+    </Key>
+    <Property Name="Appli_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ID_Applicant" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_Req_Authen">
+    <Key>
+      <PropertyRef Name="ID_Authen" />
+    </Key>
+    <Property Name="ID_Authen" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="Authen_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_Req_AF">
+    <Key>
+      <PropertyRef Name="Req_AF_CODE" />
+    </Key>
+    <Property Name="Req_AF_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Allow_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="USER_NO" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="AF_DATE" Type="DateTime" Precision="3" />
+    <Property Name="AF_Site" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AF_Folder" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AF_Note" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AF_REQUESTER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="AF_APPROVER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Date_APPROVER" Type="DateTime" Precision="3" />
+    <Property Name="Req_OPEN_BY" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Req_OPEN_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_ASSIGN_TO_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_ASSIGN_TO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Req_CLOSE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Req_CLOSE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="REQ_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="Req_BILL_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Req_BILL_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_COST" Type="Single" />
+    <Property Name="USER_CREATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="USER_UPDATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="UPDATE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_SUBMIT_DATE" Type="DateTime" Precision="3" />
+    <Property Name="AF_STATUS_ID" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="APPROVER_OWNER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="APPROVER_OWNER_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbl_AF_STATUS">
+    <Key>
+      <PropertyRef Name="AF_STATUS_ID" />
+    </Key>
+    <Property Name="AF_STATUS_ID" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="AF_STATUS_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_Req_Navi_HR">
+    <Key>
+      <PropertyRef Name="Req_Navi_HR_CODE" />
+    </Key>
+    <Property Name="Req_Navi_HR_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="USER_NO" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="Allow_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="Navi_HR_User_Log_In" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Navi_HR_Detail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Navi_HR_REQUESTER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Navi_HR_REQUESTER_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Navi_HR_APPROVER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Navi_HR_APPROVER_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Navi_HR_APPROVER_IT" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Navi_HR_APPROVER_IT_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_OPEN_BY" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Req_OPEN_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_ASSIGN_TO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Req_ASSIGN_TO_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_CLOSE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Req_CLOSE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="REQ_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="Req_BILL_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Req_BILL_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_COST" Type="Single" />
+    <Property Name="USER_CREATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="USER_UPDATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="UPDATE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_SUBMIT_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbl_Req_Program">
+    <Key>
+      <PropertyRef Name="Req_PG_CODE" />
+    </Key>
+    <Property Name="Req_PG_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="USER_NO" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="PG_DATE" Type="DateTime" Precision="3" />
+    <Property Name="PG_Work" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PG_Problem" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="PG_Requirement" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="PG_Frequency" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PG_Date_start" Type="DateTime" Precision="3" />
+    <Property Name="PG_APPROVER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PG_APPROVER_DATE" Type="DateTime" Precision="3" />
+    <Property Name="PG_APPROVER_IT" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Date_APPROVER_IT" Type="DateTime" Precision="3" />
+    <Property Name="Req_OPEN_BY" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Req_OPEN_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_ASSIGN_TO_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_ASSIGN_TO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="REQ_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="Req_CLOSE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Req_CLOSE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_BILL_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Req_BILL_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_COST" Type="Single" />
+    <Property Name="USER_CREATE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="USER_UPDATE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="UPDATE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_SUBMIT_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbl_Req_SharDrive">
+    <Key>
+      <PropertyRef Name="Req_SD_CODE" />
+    </Key>
+    <Property Name="Req_SD_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Allow_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="ID_Authen" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="USER_NO" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="SD_DATE" Type="DateTime" Precision="3" />
+    <Property Name="SD_Drive" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="SD_Folder" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="SD_Approved_Owner" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="SD_Approved_Owner_Date" Type="DateTime" Precision="3" />
+    <Property Name="SD_Note" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SD_REQUESTER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="SD_APPROVER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Date_APPROVER" Type="DateTime" Precision="3" />
+    <Property Name="Req_OPEN_BY" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Req_OPEN_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_ASSIGN_TO_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_ASSIGN_TO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Req_CLOSE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Req_CLOSE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="REQ_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="Req_BILL_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Req_BILL_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_COST" Type="Single" />
+    <Property Name="USER_CREATE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="USER_UPDATE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="UPDATE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_SUBMIT_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="View_Req_AF">
+    <Key>
+      <PropertyRef Name="Req_AF_CODE" />
+    </Key>
+    <Property Name="Req_AF_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="USER_NO" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="USER_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_ENG" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PROSITION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="USER_EXTENSION" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="AF_DATE" Type="DateTime" Precision="3" />
+    <Property Name="AF_Site" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AF_Folder" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AF_STATUS_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AF_Note" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AF_REQUESTER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_REQUESTER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PROSITION_REQUESTER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENT_REQUESTER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENSION_REQUESTER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Allow_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="REQ_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="STA_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="View_Req_Navi_HR_Trace">
+    <Key>
+      <PropertyRef Name="Req_Navi_HR_CODE" />
+    </Key>
+    <Property Name="Req_Navi_HR_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="USER_NO" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="USER_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_ENG" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PROSITION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="USER_EXTENSION" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Allow_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="Navi_HR_User_Log_In" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Navi_HR_Detail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Navi_HR_REQUESTER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_REQUESTER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PROSITION_REQUESTER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENT_REQUESTER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENSION_REQUESTER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Navi_HR_REQUESTER_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Navi_HR_APPROVER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_APPROVER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PROSITION_APPROVER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENT_APPROVER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENSION_APPROVER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Navi_HR_APPROVER_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_OPEN_BY" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_OPEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SURNAME_OPEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENSION_OPEN" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Req_OPEN_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_ASSIGN_TO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_ASSIGN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SURNAME_ASSIGN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENSION_ASSIGN" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Req_ASSIGN_TO_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_CLOSE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_CLOSE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SURNAME_CLOSE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENSION_CLOSE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Req_CLOSE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="REQ_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="STA_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Allow_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="View_Req_PG">
+    <Key>
+      <PropertyRef Name="Req_PG_CODE" />
+    </Key>
+    <Property Name="Req_PG_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="USER_NO" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="USER_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_ENG" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PROSITION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="USER_EXTENSION" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PG_DATE" Type="DateTime" Precision="3" />
+    <Property Name="PG_Work" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PG_Problem" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="PG_Requirement" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="PG_Frequency" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PG_Date_start" Type="DateTime" Precision="3" />
+    <Property Name="STA_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="REQ_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="View_Req_PG_Trace">
+    <Key>
+      <PropertyRef Name="Req_PG_CODE" />
+    </Key>
+    <Property Name="Req_PG_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="USER_NO" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="USER_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_ENG" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PROSITION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="USER_EXTENSION" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PG_DATE" Type="DateTime" Precision="3" />
+    <Property Name="PG_Work" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PG_Problem" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="PG_Requirement" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="PG_Frequency" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PG_Date_start" Type="DateTime" Precision="3" />
+    <Property Name="PG_APPROVER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_APPROVER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PROSITION_APPROVER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENT_APPROVER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENSION_APPROVER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PG_APPROVER_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_OPEN_BY" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_OPEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SURNAME_OPEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENSION_OPEN" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Req_OPEN_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_ASSIGN_TO_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_ASSIGN_TO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_ASSIGN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SURNAME_ASSIGN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENSION_ASSIGN" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Req_CLOSE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_CLOSE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SURNAME_CLOSE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENSION_CLOSE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Req_CLOSE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="REQ_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="STA_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PG_APPROVER_IT" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Date_APPROVER_IT" Type="DateTime" Precision="3" />
+    <Property Name="NAME_APPROVER_IT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SURNAME_APPROVER_IT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENSION_APPROVER_IT" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="View_Req_SD">
+    <Key>
+      <PropertyRef Name="Req_SD_CODE" />
+    </Key>
+    <Property Name="Req_SD_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="USER_NO" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="USER_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_ENG" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PROSITION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="USER_EXTENSION" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="SD_DATE" Type="DateTime" Precision="3" />
+    <Property Name="SD_Drive" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="SD_Folder" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="SD_Note" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SD_REQUESTER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_REQUESTER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PROSITION_REQUESTER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENT_REQUESTER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENSION_REQUESTER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Allow_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Authen_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="STA_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="REQ_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="View_Req_AF_Trace">
+    <Key>
+      <PropertyRef Name="Req_AF_CODE" />
+    </Key>
+    <Property Name="Req_AF_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="USER_NO" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="USER_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_ENG" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PROSITION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="USER_EXTENSION" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="AF_DATE" Type="DateTime" Precision="3" />
+    <Property Name="AF_Site" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AF_Folder" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AF_Note" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AF_REQUESTER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_REQUESTER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PROSITION_REQUESTER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENT_REQUESTER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENSION_REQUESTER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="AF_APPROVER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_APPROVER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PROSITION_APPROVER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENT_APPROVER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENSION_APPROVER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Date_APPROVER" Type="DateTime" Precision="3" />
+    <Property Name="Req_ASSIGN_TO_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_OPEN_BY" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_OPEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SURNAME_OPEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENSION_OPEN" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Req_OPEN_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_ASSIGN_TO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_ASSIGN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SURNAME_ASSIGN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENSION_ASSIGN" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Req_CLOSE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_CLOSE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SURNAME_CLOSE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENSION_CLOSE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Req_CLOSE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="REQ_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="AF_STATUS_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Allow_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="STA_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="View_Req_SD_Trace">
+    <Key>
+      <PropertyRef Name="Req_SD_CODE" />
+    </Key>
+    <Property Name="Req_SD_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="USER_NO" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="USER_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_ENG" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PROSITION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="USER_EXTENSION" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="SD_DATE" Type="DateTime" Precision="3" />
+    <Property Name="SD_Drive" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="SD_Folder" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="SD_Note" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SD_REQUESTER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_REQUESTER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PROSITION_REQUESTER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENT_REQUESTER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENSION_REQUESTER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="SD_APPROVER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_APPROVER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PROSITION_APPROVER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENT_APPROVER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENSION_APPROVER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Date_APPROVER" Type="DateTime" Precision="3" />
+    <Property Name="Req_OPEN_BY" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_OPEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SURNAME_OPEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENSION_OPEN" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Req_OPEN_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_ASSIGN_TO_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_ASSIGN_TO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_ASSIGN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SURNAME_ASSIGN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENSION_ASSIGN" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Req_CLOSE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_CLOSE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SURNAME_CLOSE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENSION_CLOSE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Req_CLOSE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="REQ_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="Allow_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Authen_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="STA_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_Req_Nav">
+    <Key>
+      <PropertyRef Name="Req_NAV_CODE" />
+    </Key>
+    <Property Name="Req_NAV_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="USER_NO" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="Allow_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="SECTION_ID" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="NAV_Detail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NAV_DOC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NAV_APPROVER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Date_APPROVER" Type="DateTime" Precision="3" />
+    <Property Name="APPROVER_Owner_System" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="APPROVER_Owner_System_Date" Type="DateTime" Precision="3" />
+    <Property Name="Req_OPEN_BY" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Req_OPEN_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_ASSIGN_TO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Req_ASSIGN_TO_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_CLOSE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Req_CLOSE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="REQ_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="Req_BILL_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Req_BILL_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_COST" Type="Single" />
+    <Property Name="USER_CREATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="USER_UPDATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="UPDATE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_SUBMIT_DATE" Type="DateTime" Precision="3" />
+    <Property Name="DATE_NAV" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbl_section">
+    <Key>
+      <PropertyRef Name="SECTION_ID" />
+    </Key>
+    <Property Name="SECTION_ID" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="SECTION_DESC" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="View_Req_NAV">
+    <Key>
+      <PropertyRef Name="Req_NAV_CODE" />
+    </Key>
+    <Property Name="Req_NAV_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="USER_NO" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="USER_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_ENG" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PROSITION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="USER_EXTENSION" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAV_Detail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NAV_DOC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SECTION_DESC" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Allow_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="REQ_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="STA_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DATE_NAV" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="View_Req_NAV_Trace">
+    <Key>
+      <PropertyRef Name="Req_NAV_CODE" />
+    </Key>
+    <Property Name="Req_NAV_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="USER_NO" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="USER_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_ENG" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PROSITION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="USER_EXTENSION" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAV_Detail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NAV_DOC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NAV_APPROVER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_APPROVER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PROSITION_APPROVER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENT_APPROVER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENSION_APPROVER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Date_APPROVER" Type="DateTime" Precision="3" />
+    <Property Name="Req_OPEN_BY" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_OPEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SURNAME_OPEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENSION_OPEN" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Req_OPEN_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_ASSIGN_TO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_ASSIGN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SURNAME_ASSIGN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENSION_ASSIGN" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Req_ASSIGN_TO_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_CLOSE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_CLOSE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SURNAME_CLOSE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENSION_CLOSE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Req_CLOSE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Allow_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SECTION_DESC" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="REQ_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="STA_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DATE_NAV" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="View_Req_Navi_HR">
+    <Key>
+      <PropertyRef Name="Req_Navi_HR_CODE" />
+    </Key>
+    <Property Name="Req_Navi_HR_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="USER_NO" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="USER_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_ENG" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PROSITION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="USER_EXTENSION" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Allow_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="Navi_HR_User_Log_In" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Navi_HR_Detail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Navi_HR_REQUESTER_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Navi_HR_REQUESTER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_REQUESTER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PROSITION_REQUESTER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENT_REQUESTER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENSION_REQUESTER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="REQ_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="Allow_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="STA_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="View_Req_PDJCOST01_Trace">
+    <Key>
+      <PropertyRef Name="Req_PDJ01_CODE" />
+    </Key>
+    <Property Name="Req_PDJ01_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="REQ_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="Allow_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="USER_NO" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="USER_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_ENG" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PROSITION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="USER_EXTENSION" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Color_Picture" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Quotation" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Spec_Sheet" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Produce_Prices" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Product_Analysis" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="PDJ01_REQUESTER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_REQUESTER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PROSITION_REQUESTER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENT_REQUESTER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENSION_REQUESTER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PDJ01_REQUESTER_DATE" Type="DateTime" Precision="3" />
+    <Property Name="PDJ01_APPROVER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_APPROVER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PROSITION_APPROVER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENT_APPROVER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENSION_APPROVER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PDJ01_APPROVER_DATE" Type="DateTime" Precision="3" />
+    <Property Name="APPROVER_MANAGER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_APPROVER_MANAGER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PROSITION_APPROVER_MANAGER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENT_APPROVER_MANAGER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENSION_APPROVER_MANAGER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DATE_APPROVER_MANAGER" Type="DateTime" Precision="3" />
+    <Property Name="Req_OPEN_BY" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_OPEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SURNAME_OPEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENSION_OPEN" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Req_OPEN_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_ASSIGN_TO_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_ASSIGN_TO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_ASSIGN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SURNAME_ASSIGN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENSION_ASSIGN" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Req_CLOSE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_CLOSE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SURNAME_CLOSE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENSION_CLOSE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Req_CLOSE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Line_Drawing" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="STA_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_Req_PDJCOST01">
+    <Key>
+      <PropertyRef Name="Req_PDJ01_CODE" />
+    </Key>
+    <Property Name="Req_PDJ01_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="REQ_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="Allow_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="USER_NO" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="Color_Picture" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Quotation" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Spec_Sheet" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Produce_Prices" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Product_Analysis" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Line_Drawing" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="PDJ01_REQUESTER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PDJ01_REQUESTER_DATE" Type="DateTime" Precision="3" />
+    <Property Name="PDJ01_APPROVER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PDJ01_APPROVER_DATE" Type="DateTime" Precision="3" />
+    <Property Name="APPROVER_MANAGER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DATE_APPROVER_MANAGER" Type="DateTime" Precision="3" />
+    <Property Name="Req_OPEN_BY" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Req_OPEN_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_ASSIGN_TO_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_ASSIGN_TO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Req_CLOSE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Req_CLOSE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_BILL_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Req_BILL_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_COST" Type="Single" />
+    <Property Name="USER_CREATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="USER_UPDATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="UPDATE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_SUBMIT_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="View_Req_PDJCOST01">
+    <Key>
+      <PropertyRef Name="Req_PDJ01_CODE" />
+    </Key>
+    <Property Name="Req_PDJ01_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="REQ_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="STA_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="USER_NO" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="USER_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_ENG" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PROSITION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="USER_EXTENSION" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Color_Picture" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Quotation" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Spec_Sheet" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Produce_Prices" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Product_Analysis" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Line_Drawing" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="PDJ01_REQUESTER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_REQUESTER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PROSITION_REQUESTER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENT_REQUESTER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENSION_REQUESTER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PDJ01_REQUESTER_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Allow_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_Req_PDJMINI02">
+    <Key>
+      <PropertyRef Name="Req_PDJ02_CODE" />
+    </Key>
+    <Property Name="Req_PDJ02_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="REQ_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="Allow_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="USER_NO" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="Sample_Pdj02" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Proto_Pdj02" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="PrototypeInfrom" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="CHM_Pdj02" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="PDJ02_REQUESTER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PDJ02_REQUESTER_DATE" Type="DateTime" Precision="3" />
+    <Property Name="PDJ02_APPROVER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PDJ02_APPROVER_DATE" Type="DateTime" Precision="3" />
+    <Property Name="APPROVER_MANAGER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DATE_APPROVER_MANAGER" Type="DateTime" Precision="3" />
+    <Property Name="Req_OPEN_BY" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Req_OPEN_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_ASSIGN_TO_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_ASSIGN_TO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Req_CLOSE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Req_CLOSE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_BILL_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Req_BILL_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_COST" Type="Single" />
+    <Property Name="USER_CREATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="USER_UPDATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="UPDATE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_SUBMIT_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="View_Req_PDJMINI02">
+    <Key>
+      <PropertyRef Name="Req_PDJ02_CODE" />
+    </Key>
+    <Property Name="Req_PDJ02_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Allow_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="REQ_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="STA_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="USER_NO" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="USER_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_ENG" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PROSITION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="USER_EXTENSION" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Sample_Pdj02" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Proto_Pdj02" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="PrototypeInfrom" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="CHM_Pdj02" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="PDJ02_REQUESTER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_REQUESTER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PROSITION_REQUESTER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENT_REQUESTER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENSION_REQUESTER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PDJ02_REQUESTER_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="View_Req_PDJMINI02_Trace">
+    <Key>
+      <PropertyRef Name="Req_PDJ02_CODE" />
+    </Key>
+    <Property Name="Req_PDJ02_CODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="REQ_STATUS" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="USER_NO" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="USER_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_ENG" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PROSITION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="USER_EXTENSION" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Sample_Pdj02" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Proto_Pdj02" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="PrototypeInfrom" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="CHM_Pdj02" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="PDJ02_REQUESTER_DATE" Type="DateTime" Precision="3" />
+    <Property Name="PDJ02_REQUESTER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_REQUESTER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENT_REQUESTER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROSITION_REQUESTER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENSION_REQUESTER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PDJ02_APPROVER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_APPROVER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PROSITION_APPROVER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENT_APPROVER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENSION_APPROVER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PDJ02_APPROVER_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_OPEN_BY" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_OPEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SURNAME_OPEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENSION_OPEN" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Req_OPEN_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_ASSIGN_TO_DATE" Type="DateTime" Precision="3" />
+    <Property Name="Req_ASSIGN_TO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_ASSIGN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SURNAME_ASSIGN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENSION_ASSIGN" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Req_CLOSE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_CLOSE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SURNAME_CLOSE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENSION_CLOSE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Req_CLOSE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="STA_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Allow_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="APPROVER_MANAGER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_APPROVER_MANAGER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PROSITION_APPROVER_MANAGER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENT_APPROVER_MANAGER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EXTENSIONAPPROVER_MANAGER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DATE_APPROVER_MANAGER" Type="DateTime" Precision="3" />
+  </EntityType>
+</Schema>

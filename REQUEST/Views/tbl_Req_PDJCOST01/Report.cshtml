@@ -1,0 +1,155 @@
+﻿@model  IEnumerable<REQUEST.Models.View_Req_PDJCOST01_Trace>
+
+@{
+    Layout = null;
+}
+
+<h2 align="middle">การขอสิทธิและยกเลิกสิทธิการใช้เครื่อง PDJCOST01</h2>
+
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<table class="table table-bordered table-hover text-nowrap fixed">
+
+    <tr bgcolor="ffd800">
+        <th>เลขเอกสาร</th>
+        <th>รหัสพนักงาน</th>
+        <th>ชื่อ-สกุล</th>
+        <th>ตำแหน่ง</th>
+        <th>ฝ่าย</th>
+        <th>เบอร์</th>
+        <th>สิทธิการใช้งาน</th>
+
+        <th>สถานะของงาน</th>
+        <th><center>Color Picture<br> (O:)</center> </th>
+        <th><center>Quotation<br>Quotation$(y)</center></th>
+        <th><center>Spec Sheet <br>SpSheet$(y)</center></th>
+        <th><center>แผนกจัดทำราคาสินค้า <br>Price$(w)</center></th>
+        <th><center>Product Analysis<br>(P:)</center></th>
+        <th><center>Line Drawing <br>(Q:)</center></th>
+
+        <th>วันที่แจ้ง</th>
+        <th>รหัสพนักงานผู้แจ้ง</th>
+        <th>ชื่อผู้แจ้ง</th>
+
+        <th>ชื่อผู้อนุมัติ</th>
+        <th>วันที่อนุมัติ</th>
+
+        <th>วันเปิดงาน</th>
+        <th>ผู้เปิดงาน</th>
+        <th>ชื่อผู้เปิดงาน</th>
+
+        <th>วันดำเนินงาน</th>
+        <th>ผู้ดำเนินงาน</th>
+        <th>ชื่อผู้ดำเนินงาน</th>
+
+        <th>วันปิดงาน</th>
+        <th>ผู้ปิดงาน</th>
+        <th>ชื่อผู้ปิดงาน</th>
+
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                 @Html.DisplayFor(modelItem => item.Req_PDJ01_CODE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.USER_NO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.USER_NAME)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.PROSITION)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DEPARTMENT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.USER_EXTENSION)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Allow_DESCRIPTION)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.STA_DESCRIPTION)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Color_Picture)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quotation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Spec_Sheet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Produce_Prices)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product_Analysis)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Line_Drawing)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PDJ01_REQUESTER_DATE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NAME_REQUESTER)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PDJ01_REQUESTER)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.NAME_APPROVER)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.PDJ01_APPROVER_DATE)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Req_OPEN_BY)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NAME_OPEN)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Req_OPEN_DATE)
+            </td>
+
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Req_ASSIGN_TO_DATE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Req_ASSIGN_TO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NAME_ASSIGN)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Req_CLOSE_DATE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Req_CLOSE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NAME_CLOSE)
+            </td>
+
+
+
+           
+        </tr>
+    }
+
+</table>

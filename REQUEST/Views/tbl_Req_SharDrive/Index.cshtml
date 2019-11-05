@@ -1,0 +1,105 @@
+﻿@model IEnumerable<REQUEST.Models.View_Req_SD>
+
+@{
+    ViewBag.Title = "Index";
+}
+<center>
+    <h2>รายการขอสิทธิและยกเลิกรหัสผู้ใช้ เพื่อเข้าสู่Share Drive</h2>
+</center>
+<div class="float-right pull-left col-md-4">
+    <form class=" navbar-from pull-left" role="search">
+        <div class="input-group pull-left">
+            @Html.TextBox("Search", null, new { @class = "form-control", @placeholder = "Search..." })
+            <div class=" input-group-btn">
+                <button class=" btn btn-default pull-left" type="submit"><i class=" glyphicon glyphicon-search"></i></button>
+            </div>
+        </div>
+    </form>
+</div>
+<input type="button" class="btn btn-info" value="กรอกข้อมูล" onclick="location.href='@Url.Action("Create", "tbl_Req_SharDrive")'" />
+
+<table class="table table-bordered table-hover text-nowrap fixed">
+    <thead class="headTable" style="background-color:#82CAFA">
+        <tr>
+            <th>
+            <th>เลขเอกสาร</th>
+            <th>รหัสพนักงาน</th>
+            <th>ชื่อ-สกุล</th>
+            <th>ตำแหน่ง</th>
+            <th>ฝ่าย</th>
+            <th>เบอร์</th>
+            <th>สิทธิการใช้งาน</th>
+            <th>วันที่แจ้ง</th>
+            <th>Drive</th>
+            <th>Folder</th>
+            <th>สิทธิการเข้าถึง</th>
+            
+            <th>รหัสพนักงานผู้แจ้ง</th>
+            <th>ชื่อผู้แจ้ง</th>
+            
+
+
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+<tr>
+
+    <td>
+        @if (Session["USER_ROLE"].ToString() == "MANAGER")
+        {
+            @Html.ActionLink(" ", "Edit", "tbl_Req_SharDrive", new { id = item.Req_SD_CODE }, new { @class = "btn btn-success btn-sm fa fa-check" })
+        }
+    </td>
+    <td>
+        <a href="@Url.Action("Details", "tbl_Req_SharDrive", new { id = item.Req_SD_CODE })" style="color:#0000EE;"> @Html.DisplayFor(modelItem => item.Req_SD_CODE)</a>
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.USER_NO)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.USER_NAME)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.PROSITION)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DEPARTMENT)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.USER_EXTENSION)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.STA_DESCRIPTION)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SD_DATE)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SD_Drive)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SD_Folder)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.Authen_DESCRIPTION)
+    </td>
+
+
+    <td>
+        @Html.DisplayFor(modelItem => item.SD_REQUESTER)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.NAME_REQUESTER)
+    </td>
+
+
+</tr>
+    }
+
+</table>

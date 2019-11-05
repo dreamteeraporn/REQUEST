@@ -1,0 +1,123 @@
+﻿@model REQUEST.Models.tbl_user
+
+@{
+    ViewBag.Title = "Register";
+}
+<center>
+    <h2>สมัครสมาชิก</h2>
+</center>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group has-feedback">
+            @Html.LabelFor(model => model.USER_NO, "รหัสพนักงาน", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.USER_NO, new { htmlAttributes = new { @class = "form-control", placeholder = "กรอกรหัสพนักงาน" } })
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                @Html.ValidationMessageFor(model => model.USER_NO, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group has-feedback">
+            @Html.LabelFor(model => model.USER_NAME, "ชื่อ-สกุล(ไทย)", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.USER_NAME, new { htmlAttributes = new { @class = "form-control", placeholder = "กรอกชื่อ-สกุลภาษาไทย" } })
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                @Html.ValidationMessageFor(model => model.USER_NAME, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            @Html.LabelFor(model => model.NAME_ENG, "ชื่อ-สกุล(อังกฤษ)", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.NAME_ENG, new { htmlAttributes = new { @class = "form-control", placeholder = "กรอกชื่อ-สกุลภาษาอังกฤษ" } })
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                @Html.ValidationMessageFor(model => model.NAME_ENG, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.PROSITION, "ตำแหน่ง", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.PROSITION, new { htmlAttributes = new { @class = "form-control", placeholder = "กรอกตำแหน่ง" } })
+                @Html.ValidationMessageFor(model => model.PROSITION, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.DEPARTMENT, "ฝ่าย", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.DEPARTMENT, new { htmlAttributes = new { @class = "form-control", placeholder = "กรอกฝ่าย" } })
+
+                @Html.ValidationMessageFor(model => model.DEPARTMENT, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            @Html.LabelFor(model => model.USER_EXTENSION, "เบอร์ติดต่อ", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+
+                @Html.EditorFor(model => model.USER_EXTENSION, new { htmlAttributes = new { @class = "form-control", placeholder = "กรอกเบอร์ติดต่อ" } })
+                <span class="glyphicon glyphicon-phone form-control-feedback"></span>
+                @Html.ValidationMessageFor(model => model.USER_EXTENSION, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            @Html.LabelFor(model => model.USER_EMAIL, "E-mail", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+
+                @Html.EditorFor(model => model.USER_EMAIL, new { htmlAttributes = new { @class = "form-control", placeholder = "กรอกอีเมล" } })
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                @Html.ValidationMessageFor(model => model.USER_EMAIL, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group has-feedback">
+            @Html.LabelFor(model => model.USER_PASSWORD, "ตั้งรหัสผ่าน", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.USER_PASSWORD, new { htmlAttributes = new { @class = "form-control", placeholder = "ตั้งรหัสผ่าน 4 ตัว" } })
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                @Html.ValidationMessageFor(model => model.USER_PASSWORD, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.USER_ROLE, "สถานะบุคคล", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.USER_ROLE, new { htmlAttributes = new { @class = "form-control", @Value = "USER", @readonly = "true" } })
+                @Html.ValidationMessageFor(model => model.USER_ROLE, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.USER_LOGIN_FLAG, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.USER_LOGIN_FLAG, new { htmlAttributes = new { @class = "form-control", @Value = "1", @readonly = "true" } })
+                @Html.ValidationMessageFor(model => model.USER_LOGIN_FLAG, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.USER_STATUS, "สถานะ", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.USER_STATUS, new { htmlAttributes = new { @class = "form-control", @Value = "ACTIVE", @readonly = "true" } })
+                @Html.ValidationMessageFor(model => model.USER_STATUS, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="ยืนยัน" class="btn btn-default" style="background-color:#84cee8" onclick=" return confirm ('ลงทะเบียนสำเร็จ')" />
+            </div>
+        </div>
+    </div>
+}
+
+

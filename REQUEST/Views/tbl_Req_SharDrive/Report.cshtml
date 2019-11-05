@@ -1,0 +1,144 @@
+﻿@model IEnumerable<REQUEST.Models.View_Req_SD_Trace>
+
+@{
+    Layout = null;
+}
+
+<h2>แบบฟอร์มการขอและยกเลิกสิทธิรหัสผู้ใช้ เพื่อการเข้าสู่ Share Drive</h2>
+
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<table class="table table-bordered table-hover text-nowrap fixed">
+
+    <tr bgcolor="ffd800">
+        <th>เลขเอกสาร</th>
+        <th>รหัสพนักงาน</th>
+        <th>ชื่อ-สกุล</th>
+        <th>ตำแหน่ง</th>
+        <th>ฝ่าย</th>
+        <th>เบอร์</th>
+        <th>สิทธิการใช้งาน</th>
+        <th>วันที่แจ้ง</th>
+        <th>Drive</th>
+        <th>Folder</th>
+        <th>สิทธิการเข้าถึง</th>
+
+
+        <th>รหัสพนักงานผู้แจ้ง</th>
+        <th>ชื่อผู้แจ้ง</th>
+        <th>เบอร์ผู้แจ้ง</th>
+        <th>รหัสพนักงานผู้อนุมัติ</th>
+        <th>ชื่อผู้อนุมัติ</th>
+
+        <th>ผู้เปิดงาน</th>
+        <th>ชื่อผู้เปิดงาน</th>
+        <th>วันเปิดงาน</th>
+
+        <th>ผู้ดำเนินงาน</th>
+        <th>ชื่อผู้ดำเนินงาน</th>
+        <th>วันดำเนินงาน</th>
+
+        <th>ผู้ปิดงาน</th>
+        <th>ชื่อผู้ปิดงาน</th>
+        <th>วันปิดงาน</th>
+
+
+  
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+              @Html.DisplayFor(modelItem => item.Req_SD_CODE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.USER_NO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.USER_NAME)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.PROSITION)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DEPARTMENT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.USER_EXTENSION)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.STA_DESCRIPTION)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SD_DATE)
+            </td>
+            <td>
+                   @Html.DisplayFor(modelItem => item.SD_Drive)
+</td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SD_Folder)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Authen_DESCRIPTION)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.SD_REQUESTER)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.NAME_REQUESTER)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.SD_APPROVER)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NAME_APPROVER)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EXTENSION_APPROVER)
+            </td>
+
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Req_OPEN_BY)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NAME_OPEN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Req_OPEN_DATE)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Req_ASSIGN_TO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NAME_ASSIGN)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Req_ASSIGN_TO_DATE)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Req_CLOSE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NAME_CLOSE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Req_CLOSE_DATE)
+            </td>
+
+            
+
+        </tr>
+    }
+
+</table>
